@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Fanasina 2026 - Réveille-Toi : Il est temps...!!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fanasina: {
+                            red: '#7B1811', // Dark red from poster text
+                            gold: '#C59A4E', // Golden tone
+                            light: '#FFF9EE', // Warm off-white background
+                            orange: '#D9682B', // Sunrise orange
+                        }
+                    },
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'sans': ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(123, 24, 17, 0.6)), url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-fanasina-light text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="logo_transparent.png" alt="Logo Fanasina" class="h-14 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#vision" class="text-gray-700 hover:text-fanasina-red font-semibold transition">Vision</a>
+                    <a href="#activites" class="text-gray-700 hover:text-fanasina-red font-semibold transition">Activités</a>
+                    <a href="#programme" class="text-gray-700 hover:text-fanasina-red font-semibold transition">Programme</a>
+                    <a href="#organisation" class="text-gray-700 hover:text-fanasina-red font-semibold transition">Organisation</a>
+                    <a href="#infos" class="text-gray-700 hover:text-fanasina-red font-semibold transition">Infos Pratiques</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="text-center px-4 z-10 max-w-4xl mx-auto">
+            <div class="mb-6 flex justify-center">
+                <img src="logo_transparent.png" alt="Fanasina Matthieu 5:13" class="h-40 md:h-56 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+            </div>
+            
+            <p class="text-fanasina-gold font-cinzel text-xl md:text-3xl tracking-widest mb-2 font-bold uppercase mt-4">Camp de Jeunes Chrétiens</p>
+            <h1 class="text-5xl md:text-7xl font-cinzel font-bold text-white mb-6 text-glow leading-tight">
+                CAMP FANASINA
+            </h1>
+            
+            <div class="bg-black/40 backdrop-blur-sm p-6 md:p-8 rounded-2xl inline-block border border-white/20 mb-8">
+                <h2 class="text-3xl md:text-5xl font-cinzel text-fanasina-gold font-bold mb-4">
+                    Réveille-Toi : Il est temps...!!
+                </h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-white text-lg font-semibold">
+                    <span class="flex items-center gap-2"><i class="far fa-calendar-alt text-fanasina-gold"></i> 11 - 13 Juillet 2026</span>
+                    <span class="hidden md:inline text-fanasina-gold">•</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-fanasina-gold"></i> MFR Fyé (72)</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="inline-block bg-gray-900/80 backdrop-blur text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl border border-gray-600 cursor-not-allowed">
+                    <i class="fas fa-lock text-fanasina-gold mr-2"></i> Inscriptions Clôturées
+                </div>
+                <p class="text-white mt-3 text-sm font-semibold"><i class="fas fa-check-circle text-green-400 mr-1"></i> Le camp est complet, merci à tous !</p>
+            </div>
+        </div>
+        
+        <!-- Shape divider -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123.1,189.22,112.5,241.53,103.11,291.54,82.2,321.39,56.44Z" class="fill-fanasina-light"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Vision & Message Section -->
+    <section id="vision" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <i class="fas fa-fire text-4xl text-fanasina-orange mb-6"></i>
+            <h2 class="text-4xl font-cinzel font-bold text-fanasina-red mb-8">Ne manque pas ce rendez-vous spirituel !</h2>
+            <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic">
+                "Un week-end pour grandir dans la foi, se ressourcer dans la présence de Dieu et créer des souvenirs fraternels inoubliables."
+            </p>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-cinzel font-bold text-fanasina-red mb-4">Au Programme</h2>
+                <p class="text-gray-600 text-lg">Découvrez le déroulé complet de notre week-end</p>
+                <div class="h-1 w-24 bg-fanasina-gold mx-auto rounded mt-4"></div>
+            </div>
+
+            <!-- Onglets de jours -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="showDay('jour1')" id="btn-jour1" class="day-btn bg-fanasina-red text-white px-6 py-2 rounded-full font-bold shadow-md hover:bg-red-800 transition">Samedi 11</button>
+                <button onclick="showDay('jour2')" id="btn-jour2" class="day-btn bg-white text-fanasina-red border border-fanasina-red px-6 py-2 rounded-full font-bold shadow-sm hover:bg-fanasina-light transition">Dimanche 12</button>
+                <button onclick="showDay('jour3')" id="btn-jour3" class="day-btn bg-white text-fanasina-red border border-fanasina-red px-6 py-2 rounded-full font-bold shadow-sm hover:bg-fanasina-light transition">Lundi 13</button>
+            </div>
+
+            <!-- Jour 1 -->
+            <div id="jour1" class="day-content transition-all duration-300">
+                <div class="text-center mb-8">
+                    <span class="inline-block bg-fanasina-orange text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-2">Jour 1</span>
+                    <h3 class="text-2xl font-cinzel font-bold text-gray-800">"Il est temps de... revenir à la maison"</h3>
+                </div>
+                
+                <div class="space-y-3 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                    
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-clock text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">7h30 - 9h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Leaders</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Installation</h4>
+                            <p class="text-sm text-gray-500 mt-1">Salle, Sonorisation, Chambre, Décoration</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-clock text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">9h30 - 10h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Leaders</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Répartition Groupes & Équipes</h4>
+                            <p class="text-sm text-gray-500 mt-1">Badge, Petit Déj, Prépa déjeuner</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-clock text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">10h00 - 10h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. Animation</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Brise Glace & Jeux</h4>
+                            <p class="text-sm text-gray-500 mt-1">Jeux de reconnaissance</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-music text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">10h30 - 11h15</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. Louange</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Louange & Adoration (Animation Danse)</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-book-open text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">11h15 - 11h45</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Safidy, Iratra, Lanto</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Présentation Thème</h4>
+                            <p class="text-sm text-gray-500 mt-1">Qui suis-je ? Mon identité en Christ...</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-utensils text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">11h45 - 13h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. 1 & 2</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Préparation & Déjeuner</h4>
+                            <p class="text-sm text-gray-500 mt-1">Rangement et nettoyage par l'Équipe 2</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-users text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">13h30 - 15h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Safidy & Équipes</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Animation, Louange & Prise de Conscience</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-microphone text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">15h00 - 16h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Intervenants</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Plénière Participative</h4>
+                            <p class="text-sm text-gray-500 mt-1">"Comprendre Coeur du Père" Luc 15: 12-22</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-coffee text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">16h00 - 18h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Safidy & Eq. 1/3</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Animation, Discussion de groupe & Goûter</h4>
+                            <p class="text-sm text-gray-500 mt-1">Préparation du dîner en fin de session</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-fire text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-fanasina-red flex flex-col transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">18h00 - 19h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Intervenants</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Louange, Témoignage & Repentance</h4>
+                            <p class="text-sm text-gray-500 mt-1">Asa sy Fampaherezana</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-moon text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col hover:border-fanasina-gold transition">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">20h00 - 22h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Tous</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Sakafo Hariva, Jeux, Discussion & Douche</h4>
+                            <p class="text-sm text-gray-500 mt-1">22h00 : Dodo</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Jour 2 -->
+            <div id="jour2" class="day-content hidden transition-all duration-300">
+                <div class="text-center mb-8">
+                    <span class="inline-block bg-fanasina-orange text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-2">Jour 2</span>
+                    <h3 class="text-2xl font-cinzel font-bold text-gray-800">"Il est temps de... se rapprocher de Dieu"</h3>
+                </div>
+                
+                <div class="space-y-3 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                    
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-sun text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">7h30 - 9h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Équipes</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Réveil, Sport Maraina & Petit Déjeuner</h4>
+                            <p class="text-sm text-gray-500 mt-1">Douche, Préparation et Louange matinale</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-comments text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">9h30 - 11h45</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Lanto & Intervenants</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Maraim-baovao & Plénière</h4>
+                            <p class="text-sm text-gray-500 mt-1">Thème : "Ma Relation avec Dieu" avec session Q/R</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-gamepad text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">14h00 - 15h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. Animation + Lanto</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Jeux et Ateliers (Thème du jour)</h4>
+                            <p class="text-sm text-gray-500 mt-1">Parcours sur 4 stations avec un message par station</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-heart text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">15h30 - 17h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Tous</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Louange & Table Ronde</h4>
+                            <p class="text-sm text-gray-500 mt-1">Témoignages, astuces pour se rapprocher de Dieu, partages</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-moon text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">18h00 - 22h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. Louange & Groupes</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Soirée Louange Lavalava & Discussion Groupes</h4>
+                            <p class="text-sm text-gray-500 mt-1">Dîner puis temps d'échange en petits groupes</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Jour 3 -->
+            <div id="jour3" class="day-content hidden transition-all duration-300">
+                <div class="text-center mb-8">
+                    <span class="inline-block bg-fanasina-orange text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-2">Jour 3</span>
+                    <h3 class="text-2xl font-cinzel font-bold text-gray-800">"Il est temps de... persévérer"</h3>
+                </div>
+                
+                <div class="space-y-3 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                    
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-coffee text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">7h30 - 10h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. 2</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Réveil, Petit Déj & Tour de Table</h4>
+                            <p class="text-sm text-gray-500 mt-1">Nettoyage, Mots d'humeur & Sujets de prière</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-praying-hands text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">10h00 - 11h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Iratra & Nomena</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Louange, Partage & Temps Personnel</h4>
+                            <p class="text-sm text-gray-500 mt-1">Étude de cas sur le thème "Persévérance" (fandinihan-tena)</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-sitemap text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">11h00 - 11h45</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Groupes</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Création d'un Plan d'Action</h4>
+                            <p class="text-sm text-gray-500 mt-1">Travail par groupe pour persévérer au quotidien</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-cross text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-fanasina-red flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">14h00 - 15h30</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Intervenants</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Culte (Lamesa) & Conclusion</h4>
+                            <p class="text-sm text-gray-500 mt-1">Culte "Persévérance", Témoignages & Fisaorana</p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-fanasina-gold text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-camera text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-fanasina-red">15h30 - 16h00</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Eq. Com & Tous</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Séance Photos, Vidéos & Rangement Final</h4>
+                            <p class="text-sm text-gray-500 mt-1">Création de souvenirs (TikTok) avant le départ à 16h00 !</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Organisation Section -->
+    <section id="organisation" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-cinzel font-bold text-fanasina-red mb-4">Organisation</h2>
+                <p class="text-gray-600 text-lg">Répartition des participants (À venir)</p>
+                <div class="h-1 w-24 bg-fanasina-gold mx-auto rounded mt-4"></div>
+            </div>
+
+            <!-- Groupes -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-cinzel font-bold text-gray-800 mb-8 text-center flex items-center justify-center gap-3">
+                    <i class="fas fa-users text-fanasina-gold"></i> Les 3 Groupes de Travail
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Groupe 1 -->
+                    <div class="bg-fanasina-light rounded-2xl p-6 border-t-4 border-fanasina-red shadow-sm hover:shadow-md transition">
+                        <h4 class="text-xl font-bold text-fanasina-red mb-4 text-center">Groupe 1</h4>
+                        <ul class="space-y-2 text-gray-600 text-center">
+                            <li class="italic text-gray-400 mb-2">Liste en attente...</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 text-gray-400">...</li>
+                        </ul>
+                    </div>
+                    <!-- Groupe 2 -->
+                    <div class="bg-fanasina-light rounded-2xl p-6 border-t-4 border-fanasina-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="text-xl font-bold text-fanasina-gold mb-4 text-center">Groupe 2</h4>
+                        <ul class="space-y-2 text-gray-600 text-center">
+                            <li class="italic text-gray-400 mb-2">Liste en attente...</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 text-gray-400">...</li>
+                        </ul>
+                    </div>
+                    <!-- Groupe 3 -->
+                    <div class="bg-fanasina-light rounded-2xl p-6 border-t-4 border-fanasina-orange shadow-sm hover:shadow-md transition">
+                        <h4 class="text-xl font-bold text-fanasina-orange mb-4 text-center">Groupe 3</h4>
+                        <ul class="space-y-2 text-gray-600 text-center">
+                            <li class="italic text-gray-400 mb-2">Liste en attente...</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 border-b border-gray-200">Participant(e) à définir</li>
+                            <li class="py-1 text-gray-400">...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chambres -->
+            <div>
+                <h3 class="text-2xl font-cinzel font-bold text-gray-800 mb-8 text-center flex items-center justify-center gap-3">
+                    <i class="fas fa-bed text-fanasina-gold"></i> Répartition des Chambres
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <!-- Chambre 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">1</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 1</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">2</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 2</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">3</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 3</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">4</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 4</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 5 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">5</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 5</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 6 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">6</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 6</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 7 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">7</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 7</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 8 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">8</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 8</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 9 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">9</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 9</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                    <!-- Chambre 10 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-fanasina-gold transition shadow-sm">
+                        <div class="w-10 h-10 mx-auto bg-fanasina-light rounded-full flex items-center justify-center mb-2">
+                            <span class="font-bold text-fanasina-red">10</span>
+                        </div>
+                        <h5 class="font-bold text-gray-800 mb-2">Chambre 10</h5>
+                        <p class="text-xs text-gray-400 italic">À attribuer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Info & Location -->
+    <section id="infos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl font-cinzel font-bold text-fanasina-red mb-6">Informations Pratiques</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-fanasina-light flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-calendar-alt text-fanasina-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-800 mb-1">Dates et Horaires</h4>
+                                <p class="text-gray-600"><strong>Début :</strong> Samedi 11 Juillet 2026 à 9h00</p>
+                                <p class="text-gray-600"><strong>Fin :</strong> Lundi 13 Juillet 2026 à 17h00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-fanasina-light flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-pin text-fanasina-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-800 mb-1">Lieu du camp</h4>
+                                <p class="text-gray-600 font-semibold">MFR Fyé</p>
+                                <p class="text-gray-600">6 Rue de Rosay</p>
+                                <p class="text-gray-600">72610 Fyé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="w-full lg:w-1/2">
+                    <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-fanasina-light h-80">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2653.220556108529!2d0.08182907689104043!3d48.32731804128525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e2f5b5f63d09a5%3A0xc3f60b4a4d6b63d!2s6%20Rue%20de%20Rosay%2C%2072610%20Fy%C3%A9!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-center mb-6">
+                <img src="logo_transparent.png" alt="Logo Fanasina" class="h-24 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300">
+            </div>
+            <h3 class="text-2xl font-cinzel text-white mb-2">Camp Fanasina 2026</h3>
+            <p class="mb-6">Réveille-Toi : Il est temps...!!</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="far fa-envelope text-xl"></i></a>
+            </div>
+            <p class="text-sm border-t border-gray-800 pt-6">
+                &copy; 2026 Camp Fanasina. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function showDay(dayId) {
+            // Masquer tous les contenus
+            document.querySelectorAll('.day-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Afficher le contenu ciblé
+            document.getElementById(dayId).classList.remove('hidden');
+
+            // Réinitialiser le style de tous les boutons
+            document.querySelectorAll('.day-btn').forEach(btn => {
+                btn.classList.remove('bg-fanasina-red', 'text-white');
+                btn.classList.add('bg-white', 'text-fanasina-red');
+            });
+            
+            // Appliquer le style actif au bouton cliqué
+            const activeBtn = document.getElementById('btn-' + dayId);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-fanasina-red');
+                activeBtn.classList.add('bg-fanasina-red', 'text-white');
+            }
+        }
+    </script>
+
+</body>
+</html>
