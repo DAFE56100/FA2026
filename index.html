@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #faf8f5; /* Couleur de fond plus douce */
+            background-color: #faf8f5;
             color: #333;
             scroll-behavior: smooth;
         }
@@ -25,10 +25,10 @@
             margin: 0 auto;
         }
         
-        /* Menu de navigation - STYLE MODERNE (Glassmorphism) */
+        /* Menu de navigation - STYLE MODERNE */
         nav {
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px); /* Effet verre flouté */
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             position: sticky;
@@ -61,13 +61,11 @@
             text-transform: uppercase;
             font-size: 0.9em;
             letter-spacing: 1px;
-            transition: color 0.3s, transform 0.3s;
             position: relative;
         }
         nav a:hover {
             color: #d4af37;
         }
-        /* Petit soulignement moderne au survol */
         nav a::after {
             content: '';
             position: absolute;
@@ -165,7 +163,7 @@
             border-radius: 2px;
         }
         
-        /* Boutons Onglets Modernes (Pill shape) */
+        /* Onglets Modernes */
         .tabs {
             display: flex;
             justify-content: center;
@@ -276,7 +274,7 @@
             font-size: 0.95em;
         }
 
-        /* Section Organisation (Cartes modernes) */
+        /* Section Organisation (Cartes) */
         #organisation {
             background-color: #f4efeb;
         }
@@ -385,6 +383,7 @@
 </head>
 <body>
 
+    <!-- Menu de Navigation -->
     <nav>
         <img src="logo_transparent.png" alt="Logo Fanasina">
         <ul>
@@ -395,6 +394,7 @@
         </ul>
     </nav>
 
+    <!-- Section Vision -->
     <section id="vision">
         <video autoplay loop muted playsinline>
             <source src="fond_vision.mp4" type="video/mp4">
@@ -415,6 +415,7 @@
         </div>
     </section>
 
+    <!-- Section Programme -->
     <section id="programme" class="container">
         <h2 class="titre-section">Au Programme</h2>
         
@@ -424,6 +425,7 @@
             <button class="tab-btn" onclick="openTab('jour3', this)">Lundi 13 (Jour 3)</button>
         </div>
 
+        <!-- Jour 1 -->
         <div id="jour1" class="tab-content active">
             <div class="jour-theme">"Il est temps de... de revenir à la maison"</div>
             <div class="timeline">
@@ -439,6 +441,7 @@
             </div>
         </div>
 
+        <!-- Jour 2 -->
         <div id="jour2" class="tab-content">
             <div class="jour-theme">"Il est temps de... de se rapprocher de Dieu"</div>
             <div class="timeline">
@@ -454,6 +457,7 @@
             </div>
         </div>
 
+        <!-- Jour 3 -->
         <div id="jour3" class="tab-content">
             <div class="jour-theme">"Il est temps de... continuer le chemin avec Dieu dans la persévérance"</div>
             <div class="timeline">
@@ -471,6 +475,7 @@
         </div>
     </section>
 
+    <!-- Section Organisation -->
     <section id="organisation">
         <div class="container">
             <h2 class="titre-section">Organisation</h2>
@@ -507,6 +512,7 @@
         </div>
     </section>
 
+    <!-- Section Infos Pratiques AVEC MAPS -->
     <section id="infos" class="container">
         <h2 class="titre-section">Lieu du Camp</h2>
         <div class="info-box">
@@ -527,11 +533,13 @@
         </div>
     </section>
 
+    <!-- Pied de page -->
     <footer>
         <img src="logo_transparent.png" alt="Logo Fanasina">
         <p style="margin: 0; font-size: 0.9em; letter-spacing: 1px;">© 2026 Camp Fanasina.<br><br><i>"Vous êtes le sel de la terre" - Matthieu 5:13</i></p>
     </footer>
 
+    <!-- Script pour les onglets du programme -->
     <script>
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
