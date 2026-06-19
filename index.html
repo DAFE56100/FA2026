@@ -36,7 +36,6 @@
             align-items: center;
             padding: 10px 40px;
         }
-        /* TAILLE DU LOGO DANS LE MENU AGRANDIE ICI */
         nav img {
             height: 80px; 
         }
@@ -86,7 +85,6 @@
             max-width: 800px;
             padding: 20px;
         }
-        /* TAILLE DU LOGO CENTRAL AGRANDIE ICI */
         .vision-logo {
             height: 250px; 
             margin-bottom: 20px;
@@ -132,6 +130,7 @@
             justify-content: center;
             gap: 10px;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
         .tab-btn {
             background-color: #e0e0e0;
@@ -161,25 +160,55 @@
             text-align: center;
             font-style: italic;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-size: 1.2em;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+
+        /* NOUVEAU STYLE : Ligne du Temps (Timeline) */
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            border-left: 3px solid #d4af37;
+            padding-left: 25px;
         }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
         }
-        th {
-            background-color: #f8f8f8;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px; /* Aligné sur la bordure */
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #8b0000;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #d4af37;
+        }
+        .time {
+            font-weight: bold;
             color: #8b0000;
+            background-color: #f5f0e6;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
         }
-        tr:hover {
-            background-color: #fdfbf7;
+        .activity {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .resp {
+            color: #777;
+            font-style: italic;
+            font-size: 0.9em;
         }
 
         /* Section Organisation */
@@ -243,7 +272,6 @@
             text-align: center;
             padding: 40px 20px;
         }
-        /* TAILLE DU LOGO DANS LE PIED DE PAGE AGRANDIE ICI */
         footer img {
             height: 100px; 
             margin-bottom: 15px;
@@ -253,7 +281,6 @@
 </head>
 <body>
 
-    <!-- Menu de Navigation -->
     <nav>
         <img src="logo_transparent.png" alt="Logo Fanasina">
         <ul>
@@ -264,9 +291,7 @@
         </ul>
     </nav>
 
-    <!-- Section Vision (En-tête avec Vidéo) -->
     <section id="vision">
-        <!-- Vidéo en arrière-plan -->
         <video autoplay loop muted playsinline>
             <source src="fond_vision.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
@@ -286,7 +311,6 @@
         </div>
     </section>
 
-    <!-- Section Programme -->
     <section id="programme" class="container">
         <h2 class="titre-section">Au Programme</h2>
         
@@ -296,60 +320,53 @@
             <button class="tab-btn" onclick="openTab('jour3', this)">Lundi 13 (Jour 3)</button>
         </div>
 
-        <!-- Jour 1 -->
         <div id="jour1" class="tab-content active">
             <div class="jour-theme">"Il est temps de... de revenir à la maison"</div>
-            <table>
-                <tr><th>Horaire</th><th>Activité</th><th>Responsable</th></tr>
-                <tr><td>07h30 - 09h30</td><td>Installation (Salle, Sonorisation, Chambres)</td><td>Leaders</td></tr>
-                <tr><td>09h30 - 10h00</td><td>Répartition Groupes / Équipes</td><td>Leaders</td></tr>
-                <tr><td>10h30 - 11h45</td><td>Animation, Louange & Présentation du Thème ("Mon identité en Christ")</td><td>Safidy, Iratra, Lanto</td></tr>
-                <tr><td>12h30 - 13h30</td><td>Déjeuner</td><td>Équipe 2</td></tr>
-                <tr><td>15h00 - 16h00</td><td>Plénière Participative : "Comprendre le Cœur du Père"</td><td>Intervenants</td></tr>
-                <tr><td>16h30 - 17h30</td><td>Discussion en petit groupe & Goûter</td><td>Safidy / Équipe Animation</td></tr>
-                <tr><td>18h00 - 19h30</td><td>Louange, Témoignage & Repentance</td><td>Intervenants & Équipe Louange</td></tr>
-                <tr><td>20h00 - 21h00</td><td>Dîner</td><td>Équipe 1</td></tr>
-                <tr><td>21h00 - 22h00</td><td>Thé, Jeux de société & Discussion</td><td>Intervenants</td></tr>
-            </table>
+            <div class="timeline">
+                <div class="timeline-item"><div class="time">07h30 - 09h30</div><div class="activity">Installation (Salle, Sonorisation, Chambres)</div><div class="resp">👤 Responsable : Leaders</div></div>
+                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Répartition Groupes / Équipes</div><div class="resp">👤 Responsable : Leaders</div></div>
+                <div class="timeline-item"><div class="time">10h30 - 11h45</div><div class="activity">Animation, Louange & Présentation du Thème</div><div class="resp">👤 Responsable : Safidy, Iratra, Lanto</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Responsable : Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">15h00 - 16h00</div><div class="activity">Plénière Participative : "Comprendre le Cœur du Père"</div><div class="resp">👤 Responsable : Intervenants</div></div>
+                <div class="timeline-item"><div class="time">16h30 - 17h30</div><div class="activity">Discussion en petit groupe & Goûter</div><div class="resp">👤 Responsable : Safidy / Équipe Animation</div></div>
+                <div class="timeline-item"><div class="time">18h00 - 19h30</div><div class="activity">Louange, Témoignage & Repentance</div><div class="resp">👤 Responsable : Intervenants & Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Responsable : Équipe 1</div></div>
+                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Thé, Jeux de société & Discussion</div><div class="resp">👤 Responsable : Intervenants</div></div>
+            </div>
         </div>
 
-        <!-- Jour 2 -->
         <div id="jour2" class="tab-content">
             <div class="jour-theme">"Il est temps de... de se rapprocher de Dieu"</div>
-            <table>
-                <tr><th>Horaire</th><th>Activité</th><th>Responsable</th></tr>
-                <tr><td>07h30 - 08h30</td><td>Temps perso, Douche, Sport matinal</td><td>Équipe Animation</td></tr>
-                <tr><td>08h30 - 09h30</td><td>Petit-déjeuner & Louange</td><td>Équipe 3 & Louange</td></tr>
-                <tr><td>10h00 - 11h45</td><td>Plénière sur le thème "Ma Relation avec Dieu" (Q&A)</td><td>Lanto / Intervenants</td></tr>
-                <tr><td>12h30 - 14h00</td><td>Déjeuner & Rangement</td><td>Équipe 2</td></tr>
-                <tr><td>14h00 - 15h30</td><td>Jeux et ateliers thématiques (Parcours 4 stations)</td><td>Équipe Animation + Lanto</td></tr>
-                <tr><td>15h30 - 16h30</td><td>Table Ronde : Astuces pour se rapprocher de Dieu</td><td>Témoignages</td></tr>
-                <tr><td>18h00 - 19h00</td><td>Louange (Relation avec Dieu)</td><td>Équipe Louange</td></tr>
-                <tr><td>20h00 - 21h00</td><td>Dîner</td><td>Équipe 2</td></tr>
-                <tr><td>21h00 - 22h00</td><td>Discussion en petit groupe (Thé)</td><td>Groupes 1, 2, 3</td></tr>
-            </table>
+            <div class="timeline">
+                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Temps perso, Douche, Sport matinal</div><div class="resp">👤 Responsable : Équipe Animation</div></div>
+                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner & Louange</div><div class="resp">👤 Responsable : Équipe 3 & Louange</div></div>
+                <div class="timeline-item"><div class="time">10h00 - 11h45</div><div class="activity">Plénière sur le thème "Ma Relation avec Dieu"</div><div class="resp">👤 Responsable : Lanto / Intervenants</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 14h00</div><div class="activity">Déjeuner & Rangement</div><div class="resp">👤 Responsable : Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">14h00 - 15h30</div><div class="activity">Jeux et ateliers thématiques</div><div class="resp">👤 Responsable : Équipe Animation + Lanto</div></div>
+                <div class="timeline-item"><div class="time">15h30 - 16h30</div><div class="activity">Table Ronde : Astuces pour se rapprocher de Dieu</div><div class="resp">👤 Responsable : Témoignages</div></div>
+                <div class="timeline-item"><div class="time">18h00 - 19h00</div><div class="activity">Louange (Relation avec Dieu)</div><div class="resp">👤 Responsable : Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Responsable : Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Discussion en petit groupe (Thé)</div><div class="resp">👤 Responsable : Groupes 1, 2, 3</div></div>
+            </div>
         </div>
 
-        <!-- Jour 3 -->
         <div id="jour3" class="tab-content">
             <div class="jour-theme">"Il est temps de... continuer le chemin avec Dieu dans la persévérance"</div>
-            <table>
-                <tr><th>Horaire</th><th>Activité</th><th>Responsable</th></tr>
-                <tr><td>07h30 - 08h30</td><td>Préparation, Nettoyage chambres</td><td>Équipe 2</td></tr>
-                <tr><td>08h30 - 09h30</td><td>Petit-déjeuner</td><td>-</td></tr>
-                <tr><td>09h30 - 10h00</td><td>Tour de table (Mot du jour, Sujet de prière)</td><td>-</td></tr>
-                <tr><td>10h00 - 10h30</td><td>Louange & Partage sur la Persévérance</td><td>Iratra & Équipe Louange</td></tr>
-                <tr><td>11h00 - 11h45</td><td>Création d'un plan d'action (Groupes)</td><td>-</td></tr>
-                <tr><td>12h30 - 13h30</td><td>Déjeuner</td><td>Équipe 3</td></tr>
-                <tr><td>14h00 - 14h30</td><td>Culte de clôture ("Persévérance")</td><td>Intervenants</td></tr>
-                <tr><td>14h30 - 15h30</td><td>Témoignages, Conclusion & Remerciements</td><td>-</td></tr>
-                <tr><td>15h30 - 16h00</td><td>Séance vidéo, photos, Tiktok !</td><td>Équipe Com</td></tr>
-                <tr><td>16h00</td><td>Nettoyage général & Fin du camp</td><td>Tout le monde</td></tr>
-            </table>
+            <div class="timeline">
+                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Préparation, Nettoyage chambres</div><div class="resp">👤 Responsable : Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner</div><div class="resp">👤 Responsable : -</div></div>
+                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Tour de table (Mot du jour, Sujet de prière)</div><div class="resp">👤 Responsable : -</div></div>
+                <div class="timeline-item"><div class="time">10h00 - 10h30</div><div class="activity">Louange & Partage sur la Persévérance</div><div class="resp">👤 Responsable : Iratra & Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">11h00 - 11h45</div><div class="activity">Création d'un plan d'action (Groupes)</div><div class="resp">👤 Responsable : -</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Responsable : Équipe 3</div></div>
+                <div class="timeline-item"><div class="time">14h00 - 14h30</div><div class="activity">Culte de clôture ("Persévérance")</div><div class="resp">👤 Responsable : Intervenants</div></div>
+                <div class="timeline-item"><div class="time">14h30 - 15h30</div><div class="activity">Témoignages, Conclusion & Remerciements</div><div class="resp">👤 Responsable : -</div></div>
+                <div class="timeline-item"><div class="time">15h30 - 16h00</div><div class="activity">Séance vidéo, photos, Tiktok !</div><div class="resp">👤 Responsable : Équipe Com</div></div>
+                <div class="timeline-item"><div class="time">16h00</div><div class="activity">Nettoyage général & Fin du camp</div><div class="resp">👤 Responsable : Tout le monde</div></div>
+            </div>
         </div>
     </section>
 
-    <!-- Section Organisation (Groupes & Chambres) -->
     <section id="organisation">
         <div class="container">
             <h2 class="titre-section">Organisation</h2>
@@ -372,7 +389,6 @@
 
             <h3 style="text-align: center; margin-bottom: 20px;">Répartition des Chambres</h3>
             <div class="grid-chambres">
-                <!-- 10 Chambres générées -->
                 <div class="chambre"><span class="chambre-num">Chambre 1</span><span class="liste-vide">À venir</span></div>
                 <div class="chambre"><span class="chambre-num">Chambre 2</span><span class="liste-vide">À venir</span></div>
                 <div class="chambre"><span class="chambre-num">Chambre 3</span><span class="liste-vide">À venir</span></div>
@@ -387,7 +403,6 @@
         </div>
     </section>
 
-    <!-- Section Infos Pratiques -->
     <section id="infos" class="container">
         <h2 class="titre-section">Lieu du Camp</h2>
         <div class="info-box">
@@ -397,23 +412,17 @@
         </div>
     </section>
 
-    <!-- Pied de page -->
     <footer>
         <img src="logo_transparent.png" alt="Logo Fanasina">
         <p>© 2026 Camp Fanasina. "Vous êtes le sel de la terre" - Matthieu 5:13.</p>
     </footer>
 
-    <!-- Script pour les onglets du programme -->
     <script>
         function openTab(tabId, btn) {
-            // Cacher tous les onglets
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            // Retirer la couleur active de tous les boutons
             document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
             
-            // Afficher l'onglet sélectionné
             document.getElementById(tabId).classList.add('active');
-            // Mettre le bouton en surbrillance
             btn.classList.add('active');
         }
     </script>
