@@ -10,24 +10,27 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fcfaf5;
+            background-color: #faf8f5; /* Couleur de fond plus douce */
             color: #333;
+            scroll-behavior: smooth;
         }
         h1, h2, h3 {
             margin: 0;
         }
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         
-        /* Menu de navigation */
+        /* Menu de navigation - STYLE MODERNE (Glassmorphism) */
         nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px); /* Effet verre flouté */
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -35,34 +38,55 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 40px;
+            transition: all 0.3s ease;
         }
         nav img {
             height: 80px; 
+            transition: transform 0.3s;
+        }
+        nav img:hover {
+            transform: scale(1.05);
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
             margin: 0;
             padding: 0;
         }
         nav a {
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: #444;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 0.9em;
-            transition: color 0.3s;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
         nav a:hover {
             color: #d4af37;
         }
+        /* Petit soulignement moderne au survol */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
 
-        /* Section Vision (Avec la vidéo en fond) */
+        /* Section Vision */
         #vision {
             position: relative;
             overflow: hidden;
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -78,80 +102,111 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: brightness(0.4);
+            filter: brightness(0.35);
         }
         .vision-content {
             z-index: 1;
             max-width: 800px;
             padding: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .vision-logo {
             height: 250px; 
             margin-bottom: 20px;
-            filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.3));
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
         }
         .vision-title {
             color: #d4af37;
-            font-size: 3.5em;
-            letter-spacing: 2px;
+            font-size: 3.8em;
+            letter-spacing: 3px;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .vision-theme {
             font-size: 2.2em;
             font-style: italic;
             margin-bottom: 25px;
+            font-weight: 300;
         }
         .badge-complet {
-            background-color: #8b0000;
+            background: linear-gradient(135deg, #8b0000, #b22222);
             color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 12px 30px;
+            border-radius: 50px;
             display: inline-block;
             font-weight: bold;
             font-size: 1.1em;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        .vision-text {
-            font-size: 1.2em;
-            line-height: 1.6;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(139,0,0,0.3);
+            letter-spacing: 1px;
         }
 
-        /* Section Programme (Onglets) */
+        /* Section Programme */
         .titre-section {
             text-align: center;
-            color: #8b0000;
-            font-size: 2.5em;
-            margin-bottom: 40px;
+            color: #222;
+            font-size: 2.8em;
+            margin-bottom: 50px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
         }
+        .titre-section::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #d4af37;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Boutons Onglets Modernes (Pill shape) */
         .tabs {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 15px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
         .tab-btn {
-            background-color: #e0e0e0;
-            border: none;
-            padding: 10px 20px;
+            background-color: white;
+            color: #555;
+            border: 1px solid #ddd;
+            padding: 12px 25px;
             font-size: 1.1em;
             cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
         }
         .tab-btn.active {
-            background-color: #d4af37;
+            background: linear-gradient(135deg, #d4af37, #b8962e);
             color: white;
+            border: none;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         }
+        
         .tab-content {
             display: none;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            animation: slideIn 0.4s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .tab-content.active {
             display: block;
@@ -159,123 +214,172 @@
         .jour-theme {
             text-align: center;
             font-style: italic;
-            color: #555;
+            color: #8b0000;
             margin-bottom: 30px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             padding-bottom: 15px;
-            border-bottom: 2px solid #eee;
+            font-weight: 500;
         }
 
-        /* NOUVEAU STYLE : Ligne du Temps (Timeline) */
+        /* Ligne du Temps Moderne */
         .timeline {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
-            border-left: 3px solid #d4af37;
-            padding-left: 25px;
+            border-left: 3px solid rgba(212, 175, 55, 0.3);
+            padding-left: 30px;
         }
         .timeline-item {
             margin-bottom: 25px;
             position: relative;
+            padding: 15px 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover {
+            background-color: #fdfbf7;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -35px; /* Aligné sur la bordure */
-            top: 0;
-            width: 14px;
-            height: 14px;
+            left: -38px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: #8b0000;
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px #d4af37;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #d4af37;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover::before {
+            background-color: #d4af37;
+            transform: scale(1.2);
         }
         .time {
-            font-weight: bold;
-            color: #8b0000;
-            background-color: #f5f0e6;
+            font-weight: 700;
+            color: #d4af37;
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-size: 1em;
+            letter-spacing: 0.5px;
         }
         .activity {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 4px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 5px;
         }
         .resp {
-            color: #777;
-            font-style: italic;
-            font-size: 0.9em;
+            color: #888;
+            font-size: 0.95em;
         }
 
-        /* Section Organisation */
+        /* Section Organisation (Cartes modernes) */
         #organisation {
-            background-color: #f5f0e6;
+            background-color: #f4efeb;
         }
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
         .card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-top: 4px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-top: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, #d4af37, #8b0000);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
         .card h3 {
-            color: #8b0000;
+            color: #333;
             margin-bottom: 15px;
+            font-size: 1.5em;
         }
         .liste-vide {
             color: #999;
             font-style: italic;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
         }
+        
         .grid-chambres {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
         }
         .chambre {
             background: white;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 16px;
             text-align: center;
-            border: 1px solid #ddd;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .chambre:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
         }
         .chambre-num {
-            font-weight: bold;
-            color: #d4af37;
-            margin-bottom: 5px;
+            font-weight: 800;
+            color: #8b0000;
+            margin-bottom: 8px;
             display: block;
+            font-size: 1.1em;
         }
 
-        /* Infos pratiques */
+        /* Infos pratiques & Google Maps */
         .info-box {
             text-align: center;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .map-container {
+            margin-top: 30px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         /* Footer */
         footer {
-            background-color: #222;
-            color: white;
+            background-color: #1a1a1a;
+            color: #ccc;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         footer img {
             height: 100px; 
-            margin-bottom: 15px;
-            filter: brightness(0) invert(1);
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1) opacity(0.8);
+            transition: opacity 0.3s;
+        }
+        footer img:hover {
+            opacity: 1;
         }
     </style>
 </head>
@@ -302,11 +406,11 @@
             <h1 class="vision-title">CAMP FANASINA 2026</h1>
             <h2 class="vision-theme">"Réveille-Toi : Il est temps...!!"</h2>
             
-            <div class="badge-complet">🔒 Inscriptions Clôturées - Camp Complet !</div>
+            <div class="badge-complet">🔒 Inscriptions Clôturées - Camp Complet</div>
             
-            <p class="vision-text">
+            <p style="font-size: 1.2em; line-height: 1.6; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
                 Du Samedi 11 au Lundi 13 Juillet 2026.<br>
-                Un week-end pour grandir dans la foi, se rapprocher de Dieu et créer des souvenirs inoubliables dans la communion fraternelle.
+                Un week-end pour grandir dans la foi, se rapprocher de Dieu et créer des souvenirs inoubliables.
             </p>
         </div>
     </section>
@@ -323,46 +427,46 @@
         <div id="jour1" class="tab-content active">
             <div class="jour-theme">"Il est temps de... de revenir à la maison"</div>
             <div class="timeline">
-                <div class="timeline-item"><div class="time">07h30 - 09h30</div><div class="activity">Installation (Salle, Sonorisation, Chambres)</div><div class="resp">👤 Responsable : Leaders</div></div>
-                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Répartition Groupes / Équipes</div><div class="resp">👤 Responsable : Leaders</div></div>
-                <div class="timeline-item"><div class="time">10h30 - 11h45</div><div class="activity">Animation, Louange & Présentation du Thème</div><div class="resp">👤 Responsable : Safidy, Iratra, Lanto</div></div>
-                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Responsable : Équipe 2</div></div>
-                <div class="timeline-item"><div class="time">15h00 - 16h00</div><div class="activity">Plénière Participative : "Comprendre le Cœur du Père"</div><div class="resp">👤 Responsable : Intervenants</div></div>
-                <div class="timeline-item"><div class="time">16h30 - 17h30</div><div class="activity">Discussion en petit groupe & Goûter</div><div class="resp">👤 Responsable : Safidy / Équipe Animation</div></div>
-                <div class="timeline-item"><div class="time">18h00 - 19h30</div><div class="activity">Louange, Témoignage & Repentance</div><div class="resp">👤 Responsable : Intervenants & Équipe Louange</div></div>
-                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Responsable : Équipe 1</div></div>
-                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Thé, Jeux de société & Discussion</div><div class="resp">👤 Responsable : Intervenants</div></div>
+                <div class="timeline-item"><div class="time">07h30 - 09h30</div><div class="activity">Installation (Salle, Sonorisation, Chambres)</div><div class="resp">👤 Leaders</div></div>
+                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Répartition Groupes / Équipes</div><div class="resp">👤 Leaders</div></div>
+                <div class="timeline-item"><div class="time">10h30 - 11h45</div><div class="activity">Animation, Louange & Présentation du Thème</div><div class="resp">👤 Safidy, Iratra, Lanto</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">15h00 - 16h00</div><div class="activity">Plénière Participative : "Comprendre le Cœur du Père"</div><div class="resp">👤 Intervenants</div></div>
+                <div class="timeline-item"><div class="time">16h30 - 17h30</div><div class="activity">Discussion en petit groupe & Goûter</div><div class="resp">👤 Safidy / Équipe Animation</div></div>
+                <div class="timeline-item"><div class="time">18h00 - 19h30</div><div class="activity">Louange, Témoignage & Repentance</div><div class="resp">👤 Intervenants & Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Équipe 1</div></div>
+                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Thé, Jeux de société & Discussion</div><div class="resp">👤 Intervenants</div></div>
             </div>
         </div>
 
         <div id="jour2" class="tab-content">
             <div class="jour-theme">"Il est temps de... de se rapprocher de Dieu"</div>
             <div class="timeline">
-                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Temps perso, Douche, Sport matinal</div><div class="resp">👤 Responsable : Équipe Animation</div></div>
-                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner & Louange</div><div class="resp">👤 Responsable : Équipe 3 & Louange</div></div>
-                <div class="timeline-item"><div class="time">10h00 - 11h45</div><div class="activity">Plénière sur le thème "Ma Relation avec Dieu"</div><div class="resp">👤 Responsable : Lanto / Intervenants</div></div>
-                <div class="timeline-item"><div class="time">12h30 - 14h00</div><div class="activity">Déjeuner & Rangement</div><div class="resp">👤 Responsable : Équipe 2</div></div>
-                <div class="timeline-item"><div class="time">14h00 - 15h30</div><div class="activity">Jeux et ateliers thématiques</div><div class="resp">👤 Responsable : Équipe Animation + Lanto</div></div>
-                <div class="timeline-item"><div class="time">15h30 - 16h30</div><div class="activity">Table Ronde : Astuces pour se rapprocher de Dieu</div><div class="resp">👤 Responsable : Témoignages</div></div>
-                <div class="timeline-item"><div class="time">18h00 - 19h00</div><div class="activity">Louange (Relation avec Dieu)</div><div class="resp">👤 Responsable : Équipe Louange</div></div>
-                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Responsable : Équipe 2</div></div>
-                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Discussion en petit groupe (Thé)</div><div class="resp">👤 Responsable : Groupes 1, 2, 3</div></div>
+                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Temps perso, Douche, Sport matinal</div><div class="resp">👤 Équipe Animation</div></div>
+                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner & Louange</div><div class="resp">👤 Équipe 3 & Louange</div></div>
+                <div class="timeline-item"><div class="time">10h00 - 11h45</div><div class="activity">Plénière sur le thème "Ma Relation avec Dieu"</div><div class="resp">👤 Lanto / Intervenants</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 14h00</div><div class="activity">Déjeuner & Rangement</div><div class="resp">👤 Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">14h00 - 15h30</div><div class="activity">Jeux et ateliers thématiques</div><div class="resp">👤 Équipe Animation + Lanto</div></div>
+                <div class="timeline-item"><div class="time">15h30 - 16h30</div><div class="activity">Table Ronde : Astuces pour se rapprocher de Dieu</div><div class="resp">👤 Témoignages</div></div>
+                <div class="timeline-item"><div class="time">18h00 - 19h00</div><div class="activity">Louange (Relation avec Dieu)</div><div class="resp">👤 Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">20h00 - 21h00</div><div class="activity">Dîner</div><div class="resp">👤 Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">21h00 - 22h00</div><div class="activity">Discussion en petit groupe (Thé)</div><div class="resp">👤 Groupes 1, 2, 3</div></div>
             </div>
         </div>
 
         <div id="jour3" class="tab-content">
             <div class="jour-theme">"Il est temps de... continuer le chemin avec Dieu dans la persévérance"</div>
             <div class="timeline">
-                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Préparation, Nettoyage chambres</div><div class="resp">👤 Responsable : Équipe 2</div></div>
-                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner</div><div class="resp">👤 Responsable : -</div></div>
-                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Tour de table (Mot du jour, Sujet de prière)</div><div class="resp">👤 Responsable : -</div></div>
-                <div class="timeline-item"><div class="time">10h00 - 10h30</div><div class="activity">Louange & Partage sur la Persévérance</div><div class="resp">👤 Responsable : Iratra & Équipe Louange</div></div>
-                <div class="timeline-item"><div class="time">11h00 - 11h45</div><div class="activity">Création d'un plan d'action (Groupes)</div><div class="resp">👤 Responsable : -</div></div>
-                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Responsable : Équipe 3</div></div>
-                <div class="timeline-item"><div class="time">14h00 - 14h30</div><div class="activity">Culte de clôture ("Persévérance")</div><div class="resp">👤 Responsable : Intervenants</div></div>
-                <div class="timeline-item"><div class="time">14h30 - 15h30</div><div class="activity">Témoignages, Conclusion & Remerciements</div><div class="resp">👤 Responsable : -</div></div>
-                <div class="timeline-item"><div class="time">15h30 - 16h00</div><div class="activity">Séance vidéo, photos, Tiktok !</div><div class="resp">👤 Responsable : Équipe Com</div></div>
-                <div class="timeline-item"><div class="time">16h00</div><div class="activity">Nettoyage général & Fin du camp</div><div class="resp">👤 Responsable : Tout le monde</div></div>
+                <div class="timeline-item"><div class="time">07h30 - 08h30</div><div class="activity">Préparation, Nettoyage chambres</div><div class="resp">👤 Équipe 2</div></div>
+                <div class="timeline-item"><div class="time">08h30 - 09h30</div><div class="activity">Petit-déjeuner</div><div class="resp">👤 -</div></div>
+                <div class="timeline-item"><div class="time">09h30 - 10h00</div><div class="activity">Tour de table (Mot du jour, Sujet de prière)</div><div class="resp">👤 -</div></div>
+                <div class="timeline-item"><div class="time">10h00 - 10h30</div><div class="activity">Louange & Partage sur la Persévérance</div><div class="resp">👤 Iratra & Équipe Louange</div></div>
+                <div class="timeline-item"><div class="time">11h00 - 11h45</div><div class="activity">Création d'un plan d'action (Groupes)</div><div class="resp">👤 -</div></div>
+                <div class="timeline-item"><div class="time">12h30 - 13h30</div><div class="activity">Déjeuner</div><div class="resp">👤 Équipe 3</div></div>
+                <div class="timeline-item"><div class="time">14h00 - 14h30</div><div class="activity">Culte de clôture ("Persévérance")</div><div class="resp">👤 Intervenants</div></div>
+                <div class="timeline-item"><div class="time">14h30 - 15h30</div><div class="activity">Témoignages, Conclusion & Remerciements</div><div class="resp">👤 -</div></div>
+                <div class="timeline-item"><div class="time">15h30 - 16h00</div><div class="activity">Séance vidéo, photos, Tiktok !</div><div class="resp">👤 Équipe Com</div></div>
+                <div class="timeline-item"><div class="time">16h00</div><div class="activity">Nettoyage général & Fin du camp</div><div class="resp">👤 Tout le monde</div></div>
             </div>
         </div>
     </section>
@@ -371,23 +475,23 @@
         <div class="container">
             <h2 class="titre-section">Organisation</h2>
             
-            <h3 style="text-align: center; margin-bottom: 20px;">Groupes d'Activités</h3>
+            <h3 style="text-align: center; margin-bottom: 30px; font-size: 2em; color: #333;">Groupes d'Activités</h3>
             <div class="grid-3">
                 <div class="card">
                     <h3>Groupe 1</h3>
-                    <p class="liste-vide">Liste des membres à venir...</p>
+                    <span class="liste-vide">Membres à venir...</span>
                 </div>
                 <div class="card">
                     <h3>Groupe 2</h3>
-                    <p class="liste-vide">Liste des membres à venir...</p>
+                    <span class="liste-vide">Membres à venir...</span>
                 </div>
                 <div class="card">
                     <h3>Groupe 3</h3>
-                    <p class="liste-vide">Liste des membres à venir...</p>
+                    <span class="liste-vide">Membres à venir...</span>
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin-bottom: 20px;">Répartition des Chambres</h3>
+            <h3 style="text-align: center; margin: 50px 0 30px; font-size: 2em; color: #333;">Répartition des Chambres</h3>
             <div class="grid-chambres">
                 <div class="chambre"><span class="chambre-num">Chambre 1</span><span class="liste-vide">À venir</span></div>
                 <div class="chambre"><span class="chambre-num">Chambre 2</span><span class="liste-vide">À venir</span></div>
@@ -406,15 +510,26 @@
     <section id="infos" class="container">
         <h2 class="titre-section">Lieu du Camp</h2>
         <div class="info-box">
-            <h3 style="color:#d4af37; font-size: 1.5em; margin-bottom: 10px;">MFR Fyé</h3>
-            <p style="font-size: 1.2em;">📍 6 Rue de Rosay, 72610 Fyé</p>
-            <p style="color: #666; margin-top: 15px;">Le domaine nous est entièrement réservé pour le week-end.</p>
+            <h3 style="color:#8b0000; font-size: 2em; margin-bottom: 10px;">MFR Fyé</h3>
+            <p style="font-size: 1.3em; color: #555;">📍 6 Rue de Rosay, 72610 Fyé</p>
+            <p style="color: #888; margin-top: 10px;">Le domaine nous est entièrement réservé pour le week-end.</p>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=MFR%20Fy%C3%A9,%206%20Rue%20de%20Rosay,%2072610%20Fy%C3%A9&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
     <footer>
         <img src="logo_transparent.png" alt="Logo Fanasina">
-        <p>© 2026 Camp Fanasina. "Vous êtes le sel de la terre" - Matthieu 5:13.</p>
+        <p style="margin: 0; font-size: 0.9em; letter-spacing: 1px;">© 2026 Camp Fanasina.<br><br><i>"Vous êtes le sel de la terre" - Matthieu 5:13</i></p>
     </footer>
 
     <script>
