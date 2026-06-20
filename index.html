@@ -21,13 +21,13 @@
         .container { max-width: 1100px; margin: 0 auto; }
 
         /* ==========================================
-           2. NAVIGATION "PILULE" (HAUT DE GAMME)
+           2. NAVIGATION "PILULE" (NOIR OBSIDIENNE)
         ========================================== */
         nav {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(18, 18, 18, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: fixed;
             top: 20px;
             left: 50%;
@@ -40,15 +40,24 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px 30px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             box-sizing: border-box;
         }
         .nav-logo img {
             height: 55px;
-            transition: transform 0.3s;
             display: block;
         }
-        .nav-logo img:hover { transform: scale(1.05); }
+        
+        /* ANIMATION 1 : Battement de coeur au survol du logo menu */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.12); }
+            40% { transform: scale(1.02); }
+            60% { transform: scale(1.09); }
+        }
+        .nav-logo img:hover {
+            animation: heartbeat 1.2s infinite ease-in-out;
+        }
 
         nav ul {
             list-style: none;
@@ -59,7 +68,7 @@
         }
         nav a {
             text-decoration: none;
-            color: #444;
+            color: #ffffff;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.85em;
@@ -69,24 +78,23 @@
         }
         nav a:hover { color: #d4af37; }
         
-        /* Bouton Menu Burger (Caché sur PC) */
         .burger-btn {
             display: none;
             cursor: pointer;
             border: none;
             background: transparent;
             font-size: 1.8em;
-            color: #8b0000;
+            color: #d4af37;
         }
 
         /* ==========================================
-           3. SECTION VISION (FIX VIDÉO MOBILE)
+           3. SECTION VISION & ANIMATION DU LOGO
         ========================================== */
         #vision {
             position: relative;
             width: 100%;
             min-height: 100vh;
-            min-height: 100svh; /* Garde la taille exacte sur mobile */
+            min-height: 100svh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -102,24 +110,39 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -1;
-            background-color: #111; /* Couleur si la vidéo charge lentement */
+            background-color: #111;
         }
         .video-wrapper video {
             width: 100%; height: 100%;
-            object-fit: cover; /* MAGIE : Force le plein écran sans déformer */
+            object-fit: cover;
             object-position: center;
             filter: brightness(0.35);
         }
         .vision-content {
             z-index: 1;
             max-width: 800px;
-            margin-top: 40px; /* Compense la barre de nav */
+            margin-top: 40px;
         }
+
+        /* ANIMATION 2 : Lévitation Divine et respiration du halo */
+        @keyframes levitationDivine {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                filter: drop-shadow(0px 5px 15px rgba(212, 175, 55, 0.3));
+            }
+            50% {
+                transform: translateY(-14px) scale(1.02);
+                filter: drop-shadow(0px 15px 35px rgba(212, 175, 55, 0.8));
+            }
+        }
+
         .vision-logo {
             height: 240px; 
             margin-bottom: 20px;
-            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
+            /* On applique l'animation ici : durée 6s, en boucle infinie */
+            animation: levitationDivine 6s ease-in-out infinite;
         }
+
         .vision-title {
             color: #d4af37;
             font-size: 3.8em;
@@ -317,62 +340,44 @@
         }
         footer img { height: 90px; margin-bottom: 15px; filter: brightness(0) invert(1); }
 
-
         /* =====================================================================
-           🚀 ADAPTATION SPÉCIALE SMARTPHONES (Écrans < 768px)
+           🚀 ADAPTATION MOBILE
         ===================================================================== */
         @media (max-width: 768px) {
-            
             section { padding: 60px 15px; }
             .titre-section { font-size: 2.2em; margin-bottom: 35px; }
 
-            /* Réglage de la barre de navigation mobile */
-            nav {
-                top: 10px;
-                width: 95%;
-                padding: 10px 20px;
-            }
+            nav { top: 10px; width: 95%; padding: 10px 20px; }
             nav .nav-logo img { height: 42px; }
-            
-            /* Affichage du bouton Burger */
             .burger-btn { display: block; }
 
-            /* Masquage et transformation des liens en tiroir mobile */
             nav ul {
                 position: absolute;
-                top: 70px;
-                right: 0;
-                background: rgba(255, 255, 255, 0.96);
+                top: 70px; right: 0;
+                background: rgba(18, 18, 18, 0.96);
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
                 width: 220px;
                 border-radius: 20px;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.6);
                 flex-direction: column;
-                padding: 20px;
-                gap: 20px;
-                border: 1px solid rgba(212, 175, 55, 0.3);
+                padding: 20px; gap: 20px;
+                border: 1px solid rgba(212, 175, 55, 0.4);
                 
-                /* Animation d'ouverture */
-                opacity: 0;
-                pointer-events: none;
+                opacity: 0; pointer-events: none;
                 transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
             nav ul.mobile-open {
-                opacity: 1;
-                pointer-events: auto;
-                transform: translateY(0);
+                opacity: 1; pointer-events: auto; transform: translateY(0);
             }
 
-            /* Redimensionnement de l'accueil pour petit écran */
             .vision-logo { height: 150px; margin-bottom: 10px; }
             .vision-title { font-size: 2.5em; }
             .vision-theme { font-size: 1.4em; margin-bottom: 15px; }
             .badge-complet { font-size: 0.95em; padding: 10px 25px; }
             #vision p { font-size: 1.05em; }
 
-            /* Timeline recalibrée au millimètre pour le tactile */
             .tab-btn { padding: 10px 18px; font-size: 0.95em; }
             .tab-content { padding: 25px 15px; }
             .timeline { padding-left: 20px; border-left-width: 2px; }
@@ -381,34 +386,27 @@
             .activity { font-size: 1.05em; }
             .time { font-size: 0.9em; }
 
-            /* Grilles passées sur 1 seule colonne */
             .grid-3 { grid-template-columns: 1fr; }
             .grid-chambres { grid-template-columns: repeat(2, 1fr); }
-            
             .map-container { height: 250px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Barre de Navigation Typée "App" -->
     <nav>
         <a href="#vision" class="nav-logo">
             <img src="logo_transparent.png" alt="Logo Fanasina">
         </a>
-        
         <ul id="menu-liens">
             <li><a href="#vision">Vision</a></li>
             <li><a href="#programme">Programme</a></li>
             <li><a href="#organisation">Organisation</a></li>
             <li><a href="#infos">Infos</a></li>
         </ul>
-
-        <!-- Le Bouton du menu mobile -->
         <button class="burger-btn" onclick="toggleMenu()">☰</button>
     </nav>
 
-    <!-- Héros Accueil -->
     <section id="vision">
         <div class="video-wrapper">
             <video autoplay loop muted playsinline>
@@ -420,9 +418,7 @@
             <img src="logo_transparent.png" alt="Logo Fanasina" class="vision-logo">
             <h1 class="vision-title">CAMP FANASINA 2026</h1>
             <h2 class="vision-theme">"Réveille-Toi : Il est temps...!!"</h2>
-            
             <div class="badge-complet">🔒 Inscriptions Clôturées - Camp Complet</div>
-            
             <p style="font-size: 1.2em; line-height: 1.5; max-width: 550px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.9);">
                 Du Samedi 11 au Lundi 13 Juillet 2026.<br>
                 Un week-end pour grandir dans la foi, se rapprocher de Dieu et créer des souvenirs inoubliables.
@@ -433,14 +429,12 @@
     <!-- Section Programme -->
     <section id="programme" class="container">
         <h2 class="titre-section">Au Programme</h2>
-        
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('jour1', this)">Samedi 11</button>
             <button class="tab-btn" onclick="openTab('jour2', this)">Dimanche 12</button>
             <button class="tab-btn" onclick="openTab('jour3', this)">Lundi 13</button>
         </div>
 
-        <!-- Jour 1 -->
         <div id="jour1" class="tab-content active">
             <div class="jour-theme">"Il est temps de... de revenir à la maison"</div>
             <div class="timeline">
@@ -456,7 +450,6 @@
             </div>
         </div>
 
-        <!-- Jour 2 -->
         <div id="jour2" class="tab-content">
             <div class="jour-theme">"Il est temps de... de se rapprocher de Dieu"</div>
             <div class="timeline">
@@ -472,7 +465,6 @@
             </div>
         </div>
 
-        <!-- Jour 3 -->
         <div id="jour3" class="tab-content">
             <div class="jour-theme">"Il est temps de... continuer le chemin avec Dieu"</div>
             <div class="timeline">
@@ -490,11 +482,9 @@
         </div>
     </section>
 
-    <!-- Section Organisation -->
     <section id="organisation">
         <div class="container">
             <h2 class="titre-section">Organisation</h2>
-            
             <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em; color: #333;">Groupes d'Activités</h3>
             <div class="grid-3">
                 <div class="card"><h3>Groupe 1</h3><span class="liste-vide">Membres à venir...</span></div>
@@ -518,14 +508,12 @@
         </div>
     </section>
 
-    <!-- Section Infos Pratiques -->
     <section id="infos" class="container">
         <h2 class="titre-section">Lieu du Camp</h2>
         <div class="info-box">
             <h3 style="color:#8b0000; font-size: 2em; margin-bottom: 5px;">MFR Fyé</h3>
             <p style="font-size: 1.2em; color: #555; margin-bottom: 5px;">📍 6 Rue de Rosay, 72610 Fyé</p>
             <p style="color: #888; font-size:0.95em;">Le domaine nous est entièrement réservé pour le week-end.</p>
-            
             <div class="map-container">
                 <iframe src="https://maps.google.com/maps?q=MFR%20Fy%C3%A9,%206%20Rue%20de%20Rosay,%2072610%20Fy%C3%A9&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
@@ -537,9 +525,7 @@
         <p style="margin: 0; font-size: 0.9em; color:#bbb;">© 2026 Camp Fanasina.<br><br><i>"Vous êtes le sel de la terre" - Matthieu 5:13</i></p>
     </footer>
 
-    <!-- SCRIPTS (Onglets + Menu Mobile) -->
     <script>
-        // 1. Gestion des onglets du Programme
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -547,13 +533,10 @@
             btn.classList.add('active');
         }
 
-        // 2. Gestion du Menu Burger Mobile
         function toggleMenu() {
-            const menu = document.getElementById('menu-liens');
-            menu.classList.toggle('mobile-open');
+            document.getElementById('menu-liens').classList.toggle('mobile-open');
         }
 
-        // Ferme le menu mobile automatiquement quand on clique sur un lien
         document.querySelectorAll('#menu-liens a').forEach(lien => {
             lien.addEventListener('click', () => {
                 document.getElementById('menu-liens').classList.remove('mobile-open');
