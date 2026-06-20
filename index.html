@@ -48,7 +48,6 @@
             display: block;
         }
         
-        /* ANIMATION 1 : Battement de coeur au survol du logo menu */
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             25% { transform: scale(1.12); }
@@ -88,7 +87,7 @@
         }
 
         /* ==========================================
-           3. SECTION VISION & ANIMATION DU LOGO
+           3. SECTION VISION & LOGO ZOOMÉ
         ========================================== */
         #vision {
             position: relative;
@@ -120,26 +119,25 @@
         }
         .vision-content {
             z-index: 1;
-            max-width: 800px;
-            margin-top: 40px;
+            max-width: 850px;
+            margin-top: 50px;
         }
 
-        /* ANIMATION 2 : Lévitation Divine et respiration du halo */
         @keyframes levitationDivine {
             0%, 100% {
                 transform: translateY(0px) scale(1);
-                filter: drop-shadow(0px 5px 15px rgba(212, 175, 55, 0.3));
+                filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.9));
             }
             50% {
-                transform: translateY(-14px) scale(1.02);
+                transform: translateY(-15px) scale(1.02);
                 filter: drop-shadow(0px 15px 35px rgba(212, 175, 55, 0.8));
             }
         }
 
+        /* 🔎 ZOOM APPLIQUÉ ICI POUR PC (360px au lieu de 240px) */
         .vision-logo {
-            height: 240px; 
-            margin-bottom: 20px;
-            /* On applique l'animation ici : durée 6s, en boucle infinie */
+            height: 360px; 
+            margin-bottom: 25px;
             animation: levitationDivine 6s ease-in-out infinite;
         }
 
@@ -372,7 +370,9 @@
                 opacity: 1; pointer-events: auto; transform: translateY(0);
             }
 
-            .vision-logo { height: 150px; margin-bottom: 10px; }
+            /* 🔎 ZOOM APPLIQUÉ ICI POUR MOBILE (230px au lieu de 150px) */
+            .vision-logo { height: 230px; margin-bottom: 15px; }
+            
             .vision-title { font-size: 2.5em; }
             .vision-theme { font-size: 1.4em; margin-bottom: 15px; }
             .badge-complet { font-size: 0.95em; padding: 10px 25px; }
@@ -426,7 +426,6 @@
         </div>
     </section>
 
-    <!-- Section Programme -->
     <section id="programme" class="container">
         <h2 class="titre-section">Au Programme</h2>
         <div class="tabs">
