@@ -6,41 +6,40 @@
     <title>Camp Fanasina 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Styles généraux */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #faf8f5; color: #333; scroll-behavior: smooth; }
-        section { padding: 90px 20px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #faf8f5; color: #333; scroll-behavior: smooth; }
+        section { padding: 80px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
         /* Navigation */
-        nav { background: rgba(18, 18, 18, 0.92); backdrop-filter: blur(16px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1000px; border-radius: 50px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 8px 30px; border: 1px solid rgba(212, 175, 55, 0.4); box-sizing: border-box; }
-        .nav-logo img { height: 55px; }
-        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85em; letter-spacing: 1.5px; }
-        .burger-btn { display: none; cursor: pointer; border: none; background: transparent; font-size: 1.8em; color: #d4af37; }
+        nav { background: rgba(18, 18, 18, 0.92); backdrop-filter: blur(16px); position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1000px; border-radius: 50px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; border: 1px solid rgba(212, 175, 55, 0.4); }
+        .nav-logo img { height: 45px; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: #fff; font-weight: 700; font-size: 0.8em; text-transform: uppercase; }
+        .burger-btn { display: none; color: #d4af37; background: none; border: none; font-size: 1.5em; }
 
-        /* Section Vision & Logo Animé */
-        #vision { position: relative; width: 100%; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; overflow: hidden; padding: 0 20px; }
-        .video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #111; }
+        /* Section Vision */
+        #vision { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        .video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         .video-wrapper video { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.35); }
-        @keyframes levitationDivine { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-15px) scale(1.02); } }
-        .vision-logo { height: 360px; margin-bottom: 25px; animation: levitationDivine 6s ease-in-out infinite; filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6)); }
-        .vision-title { color: #d4af37; font-size: 3.8em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
-        .badge-complet { background: linear-gradient(135deg, #8b0000, #b22222); color: white; padding: 12px 35px; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.1em; margin-bottom: 25px; }
+        @keyframes levitation { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .vision-logo { height: 280px; animation: levitation 4s infinite ease-in-out; }
+        .vision-title { color: #d4af37; font-size: 3em; margin: 20px 0; }
 
-        /* Organisation */
-        #organisation { background-color: #f4efeb; padding: 60px 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card h3 { color: #8b0000; margin-bottom: 15px; }
-        .grid-chambres { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .chambre { background: white; padding: 15px; border-radius: 12px; border: 1px solid #d4af37; }
+        /* Planning & Organisation */
+        .titre-section { text-align: center; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; }
+        .timeline { max-width: 600px; margin: 0 auto; border-left: 3px solid #d4af37; padding-left: 25px; }
+        .timeline-item { margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; }
+        .grid-org { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+        .liste { list-style: none; padding: 0; }
+        .liste li { padding: 5px 0; border-bottom: 1px solid #eee; }
+        .chambre-box { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 4px solid #8b0000; }
 
         /* Footer */
-        footer { background-color: #1a1a1a; color: #ccc; text-align: center; padding: 50px 20px; }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
-        .social-links a { width: 48px; height: 48px; border-radius: 50%; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border: 1px solid #d4af37; }
-        
-        @media (max-width: 768px) { .vision-logo { height: 230px; } .burger-btn { display: block; } nav ul { position: absolute; top: 70px; right: 0; background: #121212; width: 200px; flex-direction: column; padding: 20px; opacity: 0; pointer-events: none; } nav ul.mobile-open { opacity: 1; pointer-events: auto; } }
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: #d4af37; font-size: 1.5em; margin: 0 10px; }
+
+        @media (max-width: 768px) { .grid-org { grid-template-columns: 1fr; } .burger-btn { display: block; } nav ul { display: none; } }
     </style>
 </head>
 <body>
@@ -49,6 +48,7 @@
         <a href="#vision" class="nav-logo"><img src="logo_transparent.png" alt="Logo"></a>
         <ul id="menu-liens">
             <li><a href="#vision">Vision</a></li>
+            <li><a href="#programme">Programme</a></li>
             <li><a href="#organisation">Organisation</a></li>
             <li><a href="#infos">Infos</a></li>
         </ul>
@@ -57,32 +57,43 @@
 
     <section id="vision">
         <div class="video-wrapper"><video autoplay loop muted playsinline><source src="fond_vision.mp4" type="video/mp4"></video></div>
-        <div class="vision-content">
-            <img src="logo_transparent.png" alt="Logo" class="vision-logo">
-            <h1 class="vision-title">CAMP FANASINA 2026</h1>
-            <div class="badge-complet">🔒 Inscriptions Clôturées</div>
+        <img src="logo_transparent.png" alt="Logo" class="vision-logo">
+        <h1 class="vision-title">CAMP FANASINA 2026</h1>
+    </section>
+
+    <section id="programme" class="container">
+        <h2 class="titre-section">Programme</h2>
+        <div class="timeline">
+            <div class="timeline-item"><strong>07:30</strong> - Installation</div>
+            <div class="timeline-item"><strong>09:30</strong> - Répartition Groupes</div>
+            <div class="timeline-item"><strong>10:30</strong> - Animation</div>
+            <div class="timeline-item"><strong>12:30</strong> - Déjeuner</div>
+            <div class="timeline-item"><strong>15:00</strong> - Plénière</div>
         </div>
     </section>
 
     <section id="organisation" class="container">
-        <h2 style="text-align:center; margin-bottom:40px;">Organisation</h2>
-        
-        <h3>Groupes d'Activités</h3>
-        <div class="grid-3">
-            <div class="card"><h3>G 1</h3><p>Mialy, Iratra, Andrianina, Shanon, Fanomezana, Nomena, Andry, Njiva, Eric, Kenny</p></div>
-            <div class="card"><h3>G 2</h3><p>Miora, Sariaka, Daniella, Fahasoavana, Judi, Hasina, Mika, Sitraka, Arthur, Tsiory</p></div>
-            <div class="card"><h3>G 3</h3><p>Lanto, Seraya, Ando, Aina, Notiavina, Safidy, Fanilo, Mahefa, Dafe</p></div>
+        <h2 class="titre-section">Organisation</h2>
+        <div class="grid-org">
+            <div><h3>G 1</h3><ul class="liste"><li>Mialy</li><li>Iratra</li><li>Andrianina</li><li>Shanon</li><li>Fanomezana</li><li>Nomena</li><li>Andry</li><li>Njiva</li><li>Eric</li><li>Kenny</li></ul></div>
+            <div><h3>G 2</h3><ul class="liste"><li>Miora</li><li>Sariaka</li><li>Daniella</li><li>Fahasoavana</li><li>Judi</li><li>Hasina</li><li>Mika</li><li>Sitraka</li><li>Arthur</li><li>Tsiory</li></ul></div>
+            <div><h3>G 3</h3><ul class="liste"><li>Lanto</li><li>Seraya</li><li>Ando</li><li>Aina</li><li>Notiavina</li><li>Safidy</li><li>Fanilo</li><li>Mahefa</li><li>Dafe</li></ul></div>
         </div>
+        <h3 style="margin-top:40px;">Répartition des Chambres</h3>
+        <div class="chambre-box"><strong>Chambre 1:</strong> Mialy, Miora, Lanto, Shanon, Aina, Daniella</div>
+        <div class="chambre-box"><strong>Chambre 2:</strong> Andrianina, Iratra, Ando, Fanomezana, Sariaka, Seraya</div>
+        <div class="chambre-box"><strong>Chambre 3:</strong> Pste Léa, Pst Rabarijaona</div>
+        <div class="chambre-box"><strong>Chambre 4:</strong> Notiavina, Safidy, Judi, Sitraka</div>
+        <div class="chambre-box"><strong>Chambre 5:</strong> Hasina, Mahefa, Andry, Njiva</div>
+        <div class="chambre-box"><strong>Chambre 6:</strong> Dafe, Arthur, Tsiory, Fanilo</div>
+        <div class="chambre-box"><strong>Chambre 7:</strong> Nomena, Mika, Kenny, Eric</div>
+    </section>
 
-        <h3>Répartition des 7 Chambres</h3>
-        <div class="grid-chambres">
-            <div class="chambre"><strong>Chambre 1</strong><br>Mialy, Miora, Lanto, Shanon, Aina, Daniella</div>
-            <div class="chambre"><strong>Chambre 2</strong><br>Andrianina, Iratra, Ando, Fanomezana, Sariaka, Seraya</div>
-            <div class="chambre"><strong>Chambre 3</strong><br>Pste Léa, Pst Rabarijaona</div>
-            <div class="chambre"><strong>Chambre 4</strong><br>Notiavina, Safidy, Judi, Sitraka</div>
-            <div class="chambre"><strong>Chambre 5</strong><br>Hasina, Mahefa, Andry, Njiva</div>
-            <div class="chambre"><strong>Chambre 6</strong><br>Dafe, Arthur, Tsiory, Fanilo</div>
-            <div class="chambre"><strong>Chambre 7</strong><br>Nomena, Mika, Kenny, Eric</div>
+    <section id="infos" class="container">
+        <h2 class="titre-section">Lieu</h2>
+        <div style="text-align:center;">
+            <p>MFR Fyé - 6 Rue de Rosay, 72610 Fyé</p>
+            <iframe src="https://maps.google.com/maps?q=MFR%20Fy%C3%A9,%206%20Rue%20de%20Rosay,%2072610%20Fy%C3%A9&output=embed" width="100%" height="300" style="border:0;"></iframe>
         </div>
     </section>
 
@@ -95,7 +106,7 @@
     </footer>
 
     <script>
-        function toggleMenu() { document.getElementById('menu-liens').classList.toggle('mobile-open'); }
+        function toggleMenu() { document.getElementById('menu-liens').style.display = (document.getElementById('menu-liens').style.display === 'flex' ? 'none' : 'flex'); }
     </script>
 </body>
 </html>
