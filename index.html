@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp Fanasina 2026</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         /* ==========================================
            1. STYLES GÉNÉRAUX
@@ -134,7 +137,6 @@
             }
         }
 
-        /* 🔎 ZOOM APPLIQUÉ ICI POUR PC (360px au lieu de 240px) */
         .vision-logo {
             height: 360px; 
             margin-bottom: 25px;
@@ -330,13 +332,42 @@
             overflow: hidden;
             height: 350px;
         }
+
+        /* PIED DE PAGE ET BOUTONS SOCIAUX */
         footer {
             background-color: #1a1a1a;
             color: #ccc;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
-        footer img { height: 90px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+        footer img { height: 90px; margin-bottom: 25px; filter: brightness(0) invert(1); }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1.4em;
+            text-decoration: none;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-links a:hover {
+            background-color: #d4af37;
+            color: #111;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
 
         /* =====================================================================
            🚀 ADAPTATION MOBILE
@@ -370,9 +401,7 @@
                 opacity: 1; pointer-events: auto; transform: translateY(0);
             }
 
-            /* 🔎 ZOOM APPLIQUÉ ICI POUR MOBILE (230px au lieu de 150px) */
             .vision-logo { height: 230px; margin-bottom: 15px; }
-            
             .vision-title { font-size: 2.5em; }
             .vision-theme { font-size: 1.4em; margin-bottom: 15px; }
             .badge-complet { font-size: 0.95em; padding: 10px 25px; }
@@ -389,6 +418,8 @@
             .grid-3 { grid-template-columns: 1fr; }
             .grid-chambres { grid-template-columns: repeat(2, 1fr); }
             .map-container { height: 250px; }
+            
+            .social-links a { width: 42px; height: 42px; font-size: 1.2em; }
         }
     </style>
 </head>
@@ -521,6 +552,16 @@
 
     <footer>
         <img src="logo_transparent.png" alt="Logo Fanasina">
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61570726162921" target="_blank" rel="noopener noreferrer" title="Notre page Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/tanora_fanasina/" target="_blank" rel="noopener noreferrer" title="Notre compte Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
         <p style="margin: 0; font-size: 0.9em; color:#bbb;">© 2026 Camp Fanasina.<br><br><i>"Vous êtes le sel de la terre" - Matthieu 5:13</i></p>
     </footer>
 
