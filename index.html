@@ -23,9 +23,20 @@
         section { padding: 90px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Ajout pour les listes de noms */
-        .liste-noms { list-style: none; padding: 0; margin: 10px 0 0 0; font-size: 0.9em; text-align: center; }
-        .liste-noms li { padding: 3px 0; color: #555; }
+        /* Style pour les listes de noms */
+        .liste-noms { 
+            list-style: none; 
+            padding: 0; 
+            margin: 10px 0 0 0; 
+            font-size: 0.9em; 
+            text-align: center; 
+        }
+        .liste-noms li { 
+            padding: 3px 0; 
+            color: #555; 
+            border-bottom: 1px solid #f0f0f0; 
+        }
+        .liste-noms li:last-child { border-bottom: none; }
 
         /* ==========================================
            2. NAVIGATION "PILULE" (NOIR OBSIDIENNE)
@@ -296,7 +307,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
         .card h3 { color: #8b0000; margin-bottom: 15px; font-size: 1.5em; }
-        .liste-vide { color: #999; font-style: italic; }
         
         .grid-chambres {
             display: grid;
