@@ -4,104 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp Fanasina 2026</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #faf8f5; color: #333; }
-        section { padding: 80px 20px; }
+        /* ==========================================
+           1. STYLES GÉNÉRAUX & LISTES
+        ========================================== */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #faf8f5; color: #333; scroll-behavior: smooth; }
+        h1, h2, h3 { margin: 0; }
+        section { padding: 90px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Navigation */
-        nav { background: rgba(18, 18, 18, 0.92); backdrop-filter: blur(16px); position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1000px; border-radius: 50px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; border: 1px solid rgba(212, 175, 55, 0.4); }
-        .nav-logo img { height: 45px; }
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: #fff; font-weight: 700; font-size: 0.8em; text-transform: uppercase; }
+        /* Style pour les listes de noms */
+        .liste-noms { list-style: none; padding: 0; margin: 10px 0 0 0; }
+        .liste-noms li { padding: 4px 0; font-size: 0.95em; color: #444; border-bottom: 1px solid #eee; }
+        .liste-noms li:last-child { border-bottom: none; }
+
+        /* ==========================================
+           2. NAVIGATION
+        ========================================== */
+        nav { background: rgba(18, 18, 18, 0.92); backdrop-filter: blur(16px); position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1000px; border-radius: 50px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 8px 30px; border: 1px solid rgba(212, 175, 55, 0.4); }
+        .nav-logo img { height: 55px; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.85em; }
+        .burger-btn { display: none; cursor: pointer; border: none; background: transparent; font-size: 1.8em; color: #d4af37; }
+
+        /* ==========================================
+           3. SECTION ORGANISATION
+        ========================================== */
+        #organisation { background-color: #f4efeb; }
+        .titre-section { text-align: center; color: #222; font-size: 2.8em; margin-bottom: 50px; text-transform: uppercase; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .card { background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .card h3 { color: #8b0000; margin-bottom: 15px; font-size: 1.5em; }
         
-        /* Section Vision */
-        #vision { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
-        .video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .video-wrapper video { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.35); }
-        @keyframes levitation { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-15px) scale(1.02); } }
-        .vision-logo { height: 300px; animation: levitation 6s infinite ease-in-out; }
-        .vision-title { color: #d4af37; font-size: 3em; margin: 20px 0; }
+        .grid-chambres { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 15px; }
+        .chambre { background: white; padding: 18px; border-radius: 14px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .chambre-num { font-weight: 800; color: #8b0000; display: block; margin-bottom: 10px; }
 
-        /* Organisation & Planning */
-        .titre-section { text-align: center; font-size: 2.5em; margin-bottom: 40px; text-transform: uppercase; }
-        .timeline { max-width: 600px; margin: 0 auto; border-left: 3px solid #d4af37; padding-left: 25px; }
-        .timeline-item { margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .grid-groupes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
-        .groupe-box { background: white; padding: 20px; border-radius: 12px; border-top: 5px solid #d4af37; }
-        .chambres-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; }
-        .chambre-item { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; }
-
-        /* Footer */
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px; }
-        .social-links a { color: #d4af37; font-size: 1.5em; margin: 0 10px; }
+        /* ==========================================
+           4. RESPONSIVE
+        ========================================== */
+        @media (max-width: 768px) {
+            .burger-btn { display: block; }
+            nav ul { position: absolute; top: 70px; right: 0; background: rgba(18, 18, 18, 0.96); width: 220px; padding: 20px; flex-direction: column; display: none; }
+            nav ul.mobile-open { display: flex; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#vision" class="nav-logo"><img src="logo_transparent.png" alt="Logo"></a>
-        <ul>
+        <ul id="menu-liens">
             <li><a href="#vision">Vision</a></li>
             <li><a href="#programme">Programme</a></li>
             <li><a href="#organisation">Organisation</a></li>
-            <li><a href="#infos">Infos</a></li>
         </ul>
+        <button class="burger-btn" onclick="toggleMenu()">☰</button>
     </nav>
 
-    <section id="vision">
-        <div class="video-wrapper"><video autoplay loop muted playsinline><source src="fond_vision.mp4" type="video/mp4"></video></div>
-        <img src="logo_transparent.png" alt="Logo" class="vision-logo">
-        <h1 class="vision-title">CAMP FANASINA 2026</h1>
-    </section>
+    <section id="organisation">
+        <div class="container">
+            <h2 class="titre-section">Organisation</h2>
+            
+            <h3 style="text-align: center; margin-bottom: 30px;">Groupes d'Activités</h3>
+            <div class="grid-3">
+                <div class="card"><h3>Groupe 1</h3>
+                    <ul class="liste-noms"><li>Mialy</li><li>Iratra</li><li>Andrianina</li><li>Shanon</li><li>Fanomezana</li><li>Nomena</li><li>Andry</li><li>Njiva</li><li>Eric</li><li>Kenny</li></ul>
+                </div>
+                <div class="card"><h3>Groupe 2</h3>
+                    <ul class="liste-noms"><li>Miora</li><li>Sariaka</li><li>Daniella</li><li>Fahasoavana</li><li>Judi</li><li>Hasina</li><li>Mika</li><li>Sitraka</li><li>Arthur</li><li>Tsiory</li></ul>
+                </div>
+                <div class="card"><h3>Groupe 3</h3>
+                    <ul class="liste-noms"><li>Lanto</li><li>Seraya</li><li>Ando</li><li>Aina</li><li>Notiavina</li><li>Safidy</li><li>Fanilo</li><li>Mahefa</li><li>Dafe</li></ul>
+                </div>
+            </div>
 
-    <section id="programme" class="container">
-        <h2 class="titre-section">Programme</h2>
-        <div class="timeline">
-            <div class="timeline-item"><strong>07:30</strong> - Installation</div>
-            <div class="timeline-item"><strong>09:30</strong> - Répartition Groupes</div>
-            <div class="timeline-item"><strong>10:30</strong> - Animation & Louange</div>
-            <div class="timeline-item"><strong>12:30</strong> - Déjeuner</div>
-            <div class="timeline-item"><strong>15:00</strong> - Plénière</div>
-            <div class="timeline-item"><strong>18:00</strong> - Louange & Témoignage</div>
-            <div class="timeline-item"><strong>20:00</strong> - Dîner</div>
-        </div>
-    </section>
-
-    <section id="organisation" class="container">
-        <h2 class="titre-section">Organisation</h2>
-        <div class="grid-groupes">
-            <div class="groupe-box"><h3>G 1</h3>Mialy<br>Iratra<br>Andrianina<br>Shanon<br>Fanomezana<br>Nomena<br>Andry<br>Njiva<br>Eric<br>Kenny</div>
-            <div class="groupe-box"><h3>G 2</h3>Miora<br>Sariaka<br>Daniella<br>Fahasoavana<br>Judi<br>Hasina<br>Mika<br>Sitraka<br>Arthur<br>Tsiory</div>
-            <div class="groupe-box"><h3>G 3</h3>Lanto<br>Seraya<br>Ando<br>Aina<br>Notiavina<br>Safidy<br>Fanilo<br>Mahefa<br>Dafe</div>
-        </div>
-        <h3 style="margin-top:50px;">Répartition des 7 Chambres</h3>
-        <div class="chambres-grid">
-            <div class="chambre-item"><strong>Chambre 1:</strong> Mialy, Miora, Lanto, Shanon, Aina, Daniella</div>
-            <div class="chambre-item"><strong>Chambre 2:</strong> Andrianina, Iratra, Ando, Fanomezana, Sariaka, Seraya</div>
-            <div class="chambre-item"><strong>Chambre 3:</strong> Pste Léa, Pst Rabarijaona</div>
-            <div class="chambre-item"><strong>Chambre 4:</strong> Notiavina, Safidy, Judi, Sitraka</div>
-            <div class="chambre-item"><strong>Chambre 5:</strong> Hasina, Mahefa, Andry, Njiva</div>
-            <div class="chambre-item"><strong>Chambre 6:</strong> Dafe, Arthur, Tsiory, Fanilo</div>
-            <div class="chambre-item"><strong>Chambre 7:</strong> Nomena, Mika, Kenny, Eric</div>
+            <h3 style="text-align: center; margin: 60px 0 30px;">Répartition des Chambres</h3>
+            <div class="grid-chambres">
+                <div class="chambre"><span class="chambre-num">Chambre 1</span><ul class="liste-noms"><li>Mialy</li><li>Miora</li><li>Lanto</li><li>Shanon</li><li>Aina</li><li>Daniella</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 2</span><ul class="liste-noms"><li>Andrianina</li><li>Iratra</li><li>Ando</li><li>Fanomezana</li><li>Sariaka</li><li>Seraya</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 3</span><ul class="liste-noms"><li>Pste Léa</li><li>Pst Rabarijaona</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 4</span><ul class="liste-noms"><li>Notiavina</li><li>Safidy</li><li>Judi</li><li>Sitraka</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 5</span><ul class="liste-noms"><li>Hasina</li><li>Mahefa</li><li>Andry</li><li>Njiva</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 6</span><ul class="liste-noms"><li>Dafe</li><li>Arthur</li><li>Tsiory</li><li>Fanilo</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 7</span><ul class="liste-noms"><li>Nomena</li><li>Mika</li><li>Kenny</li><li>Eric</li></ul></div>
+            </div>
         </div>
     </section>
 
-    <section id="infos" class="container">
-        <h2 class="titre-section">Lieu</h2>
-        <div style="text-align:center;">
-            <p><strong>MFR Fyé</strong> - 6 Rue de Rosay, 72610 Fyé</p>
-            <iframe src="https://maps.google.com/maps?q=MFR%20Fy%C3%A9,%206%20Rue%20de%20Rosay,%2072610%20Fy%C3%A9&output=embed" width="100%" height="350" style="border:0;"></iframe>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61570726162921" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/tanora_fanasina/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>© 2026 Camp Fanasina</p>
-    </footer>
+    <script>
+        function toggleMenu() { document.getElementById('menu-liens').classList.toggle('mobile-open'); }
+    </script>
 </body>
 </html>
