@@ -23,6 +23,10 @@
         section { padding: 90px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
+        /* Ajout pour les listes de noms */
+        .liste-noms { list-style: none; padding: 0; margin: 10px 0 0 0; font-size: 0.9em; text-align: center; }
+        .liste-noms li { padding: 3px 0; color: #555; }
+
         /* ==========================================
            2. NAVIGATION "PILULE" (NOIR OBSIDIENNE)
         ========================================== */
@@ -333,7 +337,6 @@
             height: 350px;
         }
 
-        /* PIED DE PAGE ET BOUTONS SOCIAUX */
         footer {
             background-color: #1a1a1a;
             color: #ccc;
@@ -517,23 +520,32 @@
             <h2 class="titre-section">Organisation</h2>
             <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em; color: #333;">Groupes d'Activités</h3>
             <div class="grid-3">
-                <div class="card"><h3>Groupe 1</h3><span class="liste-vide">Membres à venir...</span></div>
-                <div class="card"><h3>Groupe 2</h3><span class="liste-vide">Membres à venir...</span></div>
-                <div class="card"><h3>Groupe 3</h3><span class="liste-vide">Membres à venir...</span></div>
+                <div class="card"><h3>Groupe 1</h3>
+                    <ul class="liste-noms">
+                        <li>Mialy</li><li>Iratra</li><li>Andrianina</li><li>Shanon</li><li>Fanomezana</li><li>Nomena</li><li>Andry</li><li>Njiva</li><li>Eric</li><li>Kenny</li>
+                    </ul>
+                </div>
+                <div class="card"><h3>Groupe 2</h3>
+                    <ul class="liste-noms">
+                        <li>Miora</li><li>Sariaka</li><li>Daniella</li><li>Fahasoavana</li><li>Judi</li><li>Hasina</li><li>Mika</li><li>Sitraka</li><li>Arthur</li><li>Tsiory</li>
+                    </ul>
+                </div>
+                <div class="card"><h3>Groupe 3</h3>
+                    <ul class="liste-noms">
+                        <li>Lanto</li><li>Seraya</li><li>Ando</li><li>Aina</li><li>Notiavina</li><li>Safidy</li><li>Fanilo</li><li>Mahefa</li><li>Dafe</li>
+                    </ul>
+                </div>
             </div>
 
             <h3 style="text-align: center; margin: 60px 0 30px; font-size: 1.8em; color: #333;">Répartition des Chambres</h3>
             <div class="grid-chambres">
-                <div class="chambre"><span class="chambre-num">Chambre 1</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 2</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 3</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 4</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 5</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 6</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 7</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 8</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 9</span><span class="liste-vide">À venir</span></div>
-                <div class="chambre"><span class="chambre-num">Chambre 10</span><span class="liste-vide">À venir</span></div>
+                <div class="chambre"><span class="chambre-num">Chambre 1</span><ul class="liste-noms"><li>Mialy</li><li>Miora</li><li>Lanto</li><li>Shanon</li><li>Aina</li><li>Daniella</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 2</span><ul class="liste-noms"><li>Andrianina</li><li>Iratra</li><li>Ando</li><li>Fanomezana</li><li>Sariaka</li><li>Seraya</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 3</span><ul class="liste-noms"><li>Pste Léa</li><li>Pst Rabarijaona</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 4</span><ul class="liste-noms"><li>Notiavina</li><li>Safidy</li><li>Judi</li><li>Sitraka</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 5</span><ul class="liste-noms"><li>Hasina</li><li>Mahefa</li><li>Andry</li><li>Njiva</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 6</span><ul class="liste-noms"><li>Dafe</li><li>Arthur</li><li>Tsiory</li><li>Fanilo</li></ul></div>
+                <div class="chambre"><span class="chambre-num">Chambre 7</span><ul class="liste-noms"><li>Nomena</li><li>Mika</li><li>Kenny</li><li>Eric</li></ul></div>
             </div>
         </div>
     </section>
