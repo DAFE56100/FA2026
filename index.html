@@ -23,7 +23,6 @@
         section { padding: 90px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Style pour les listes de noms */
         .liste-noms { 
             list-style: none; 
             padding: 0; 
@@ -237,57 +236,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.04);
         }
         .tab-content.active { display: block; }
-
-        .jour-theme {
-            text-align: center;
-            font-style: italic;
-            color: #8b0000;
-            margin-bottom: 40px;
-            font-size: 1.3em;
-            font-weight: 500;
-        }
-
-        .timeline {
-            max-width: 650px;
-            margin: 0 auto;
-            border-left: 3px solid rgba(212, 175, 55, 0.4);
-            padding-left: 30px;
-        }
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
-            padding: 15px 20px;
-            border-radius: 12px;
-            background: #fff;
-            transition: transform 0.3s;
-        }
-        .timeline-item:hover {
-            background-color: #fdfbf7;
-            transform: translateX(5px);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 20px;
-            width: 12px; height: 12px;
-            border-radius: 50%;
-            background-color: #8b0000;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #d4af37;
-        }
-        .time {
-            font-weight: 700;
-            color: #d4af37;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .activity {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: #222;
-        }
-        .resp { color: #888; font-size: 0.9em; margin-top: 4px;}
+        .coming-soon { text-align: center; color: #888; font-style: italic; padding: 40px; }
 
         /* ==========================================
            5. SECTION PLAYLIST
@@ -340,26 +289,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
         .card h3 { color: #8b0000; margin-bottom: 15px; font-size: 1.5em; }
-        
-        .grid-chambres {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 15px;
-        }
-        .chambre {
-            background: white;
-            padding: 18px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .chambre-num {
-            font-weight: 800;
-            color: #8b0000;
-            margin-bottom: 5px;
-            display: block;
-        }
 
         /* ==========================================
            7. INFOS & FOOTER
@@ -392,7 +321,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .social-links a {
             display: inline-flex;
@@ -414,59 +343,20 @@
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
         }
+        .contact-text { margin-top: 10px; font-size: 1.1em; color: #d4af37; }
 
         /* =====================================================================
            🚀 ADAPTATION MOBILE
         ===================================================================== */
         @media (max-width: 768px) {
             section { padding: 60px 15px; }
-            .titre-section { font-size: 2.2em; margin-bottom: 35px; }
-
+            .titre-section { font-size: 2.2em; }
             nav { top: 10px; width: 95%; padding: 10px 20px; }
-            nav .nav-logo img { height: 42px; }
             .burger-btn { display: block; }
-
-            nav ul {
-                position: absolute;
-                top: 70px; right: 0;
-                background: rgba(18, 18, 18, 0.96);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                width: 220px;
-                border-radius: 20px;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-                flex-direction: column;
-                padding: 20px; gap: 20px;
-                border: 1px solid rgba(212, 175, 55, 0.4);
-                
-                opacity: 0; pointer-events: none;
-                transform: translateY(-10px);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            nav ul.mobile-open {
-                opacity: 1; pointer-events: auto; transform: translateY(0);
-            }
-
-            .vision-logo { height: 230px; margin-bottom: 15px; }
+            nav ul { position: absolute; top: 70px; right: 0; background: rgba(18, 18, 18, 0.96); width: 220px; border-radius: 20px; padding: 20px; gap: 20px; flex-direction: column; opacity: 0; pointer-events: none; transform: translateY(-10px); transition: all 0.3s; }
+            nav ul.mobile-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+            .vision-logo { height: 230px; }
             .vision-title { font-size: 2.5em; }
-            .vision-theme { font-size: 1.4em; margin-bottom: 15px; }
-            .badge-complet { font-size: 0.95em; padding: 10px 25px; }
-            #vision p { font-size: 1.05em; }
-
-            .tab-btn { padding: 10px 18px; font-size: 0.95em; }
-            .tab-content { padding: 25px 15px; }
-            .timeline { padding-left: 20px; border-left-width: 2px; }
-            .timeline-item { padding: 10px 12px; }
-            .timeline-item::before { left: -26px; width: 10px; height: 10px; top: 16px; }
-            .activity { font-size: 1.05em; }
-            .time { font-size: 0.9em; }
-
-            .grid-playlist { grid-template-columns: 1fr; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .grid-chambres { grid-template-columns: repeat(2, 1fr); }
-            .map-container { height: 250px; }
-            
-            .social-links a { width: 42px; height: 42px; font-size: 1.2em; }
         }
     </style>
 </head>
@@ -487,151 +377,63 @@
     </nav>
 
     <section id="vision">
-        <div class="video-wrapper">
-            <video autoplay loop muted playsinline>
-                <source src="fond_vision.mp4" type="video/mp4">
-            </video>
-        </div>
-
+        <div class="video-wrapper"><video autoplay loop muted playsinline><source src="fond_vision.mp4" type="video/mp4"></video></div>
         <div class="vision-content">
             <img src="logo_transparent.png" alt="Logo Fanasina" class="vision-logo">
             <h1 class="vision-title">CAMP FANASINA 2026</h1>
             <h2 class="vision-theme">"Réveille-Toi : Il est temps...!!"</h2>
+            <p style="font-size: 1.5em; color: #d4af37; font-weight: bold;">Éphésiens 5:14</p>
             <div class="badge-complet">🔒 Inscriptions Clôturées - Camp Complet</div>
-            <p style="font-size: 1.2em; line-height: 1.5; max-width: 550px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.9);">
-                Du Samedi 11 au Lundi 13 Juillet 2026.<br>
-                Un week-end pour grandir dans la foi, se rapprocher de Dieu et créer des souvenirs inoubliables.
-            </p>
         </div>
     </section>
 
     <section id="programme" class="container">
         <h2 class="titre-section">Au Programme</h2>
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('jour1', this)">Samedi 11</button>
-            <button class="tab-btn" onclick="openTab('jour2', this)">Dimanche 12</button>
-            <button class="tab-btn" onclick="openTab('jour3', this)">Lundi 13</button>
-        </div>
-
-        <div id="jour1" class="tab-content active">
-            <div class="jour-theme">"Il est temps de... de revenir à la maison"</div>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time">07h30 - 09h30</span><div class="activity">Installation (Salle, Sonorisation, Chambres)</div><div class="resp">👤 Leaders</div></div>
-                <div class="timeline-item"><span class="time">09h30 - 10h00</span><div class="activity">Répartition Groupes / Équipes</div><div class="resp">👤 Leaders</div></div>
-                <div class="timeline-item"><span class="time">10h30 - 11h45</span><div class="activity">Animation, Louange & Présentation du Thème</div><div class="resp">👤 Safidy, Iratra, Lanto</div></div>
-                <div class="timeline-item"><span class="time">12h30 - 13h30</span><div class="activity">Déjeuner</div><div class="resp">👤 Équipe 2</div></div>
-                <div class="timeline-item"><span class="time">15h00 - 16h00</span><div class="activity">Plénière : "Comprendre le Cœur du Père"</div><div class="resp">👤 Intervenants</div></div>
-                <div class="timeline-item"><span class="time">16h30 - 17h30</span><div class="activity">Discussion en petit groupe & Goûter</div><div class="resp">👤 Safidy / Équipe Animation</div></div>
-                <div class="timeline-item"><span class="time">18h00 - 19h30</span><div class="activity">Louange, Témoignage & Repentance</div><div class="resp">👤 Intervenants & Équipe Louange</div></div>
-                <div class="timeline-item"><span class="time">20h00 - 21h00</span><div class="activity">Dîner</div><div class="resp">👤 Équipe 1</div></div>
-                <div class="timeline-item"><span class="time">21h00 - 22h00</span><div class="activity">Thé, Jeux de société & Discussion</div><div class="resp">👤 Intervenants</div></div>
-            </div>
-        </div>
-
-        <div id="jour2" class="tab-content">
-            <div class="jour-theme">"Il est temps de... de se rapprocher de Dieu"</div>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time">07h30 - 08h30</span><div class="activity">Temps perso, Douche, Sport matinal</div><div class="resp">👤 Équipe Animation</div></div>
-                <div class="timeline-item"><span class="time">08h30 - 09h30</span><div class="activity">Petit-déjeuner & Louange</div><div class="resp">👤 Équipe 3 & Louange</div></div>
-                <div class="timeline-item"><span class="time">10h00 - 11h45</span><div class="activity">Plénière : "Ma Relation avec Dieu"</div><div class="resp">👤 Lanto / Intervenants</div></div>
-                <div class="timeline-item"><span class="time">12h30 - 14h00</span><div class="activity">Déjeuner & Rangement</div><div class="resp">👤 Équipe 2</div></div>
-                <div class="timeline-item"><span class="time">14h00 - 15h30</span><div class="activity">Jeux et ateliers thématiques</div><div class="resp">👤 Équipe Animation + Lanto</div></div>
-                <div class="timeline-item"><span class="time">15h30 - 16h30</span><div class="activity">Table Ronde : Se rapprocher de Dieu</div><div class="resp">👤 Témoignages</div></div>
-                <div class="timeline-item"><span class="time">18h00 - 19h00</span><div class="activity">Louange (Relation avec Dieu)</div><div class="resp">👤 Équipe Louange</div></div>
-                <div class="timeline-item"><span class="time">20h00 - 21h00</span><div class="activity">Dîner</div><div class="resp">👤 Équipe 2</div></div>
-                <div class="timeline-item"><span class="time">21h00 - 22h00</span><div class="activity">Discussion en petit groupe (Thé)</div><div class="resp">👤 Groupes 1, 2, 3</div></div>
-            </div>
-        </div>
-
-        <div id="jour3" class="tab-content">
-            <div class="jour-theme">"Il est temps de... continuer le chemin avec Dieu"</div>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time">07h30 - 08h30</span><div class="activity">Préparation, Nettoyage chambres</div><div class="resp">👤 Équipe 2</div></div>
-                <div class="timeline-item"><span class="time">08h30 - 09h30</span><div class="activity">Petit-déjeuner</div><div class="resp">👤 -</div></div>
-                <div class="timeline-item"><span class="time">09h30 - 10h00</span><div class="activity">Tour de table (Humeur, Sujet de prière)</div><div class="resp">👤 -</div></div>
-                <div class="timeline-item"><span class="time">10h00 - 10h30</span><div class="activity">Louange & Partage sur la Persévérance</div><div class="resp">👤 Iratra & Équipe Louange</div></div>
-                <div class="timeline-item"><span class="time">11h00 - 11h45</span><div class="activity">Plan d'action (Groupes)</div><div class="resp">👤 -</div></div>
-                <div class="timeline-item"><span class="time">12h30 - 13h30</span><div class="activity">Déjeuner</div><div class="resp">👤 Équipe 3</div></div>
-                <div class="timeline-item"><span class="time">14h00 - 14h30</span><div class="activity">Culte de clôture ("Persévérance")</div><div class="resp">👤 Intervenants</div></div>
-                <div class="timeline-item"><span class="time">14h30 - 15h30</span><div class="activity">Témoignages & Remerciements</div><div class="resp">👤 -</div></div>
-                <div class="timeline-item"><span class="time">15h30 - 16h00</span><div class="activity">Séance vidéo, photos, Tiktok !</div><div class="resp">👤 Équipe Com</div></div>
-                <div class="timeline-item"><span class="time">16h00</span><div class="activity">Nettoyage général & Fin</div><div class="resp">👤 Tout le monde</div></div>
-            </div>
-        </div>
+        <div class="coming-soon">Programme en cours d'élaboration...</div>
     </section>
 
     <section id="playlist" class="container">
-        <h2 class="titre-section">Playlist Fanasina</h2>
+        <h2 class="titre-section">Playlist Camp Fanasina 2026</h2>
         <div class="grid-playlist">
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/ns-NalBlOh8" allowfullscreen></iframe></div><span class="video-title">Vidéo 1</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/RWfd2LK9ttc" allowfullscreen></iframe></div><span class="video-title">Vidéo 2</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/MHiEtI2Wf0Q" allowfullscreen></iframe></div><span class="video-title">Vidéo 3</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nqgTQD26Llc" allowfullscreen></iframe></div><span class="video-title">Vidéo 4</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rDGPsbjlaQA" allowfullscreen></iframe></div><span class="video-title">Vidéo 5</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/Zf5Fn86OT94" allowfullscreen></iframe></div><span class="video-title">Vidéo 6</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/HlHMNK60K60" allowfullscreen></iframe></div><span class="video-title">Vidéo 7</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CsbG2xY_f0I" allowfullscreen></iframe></div><span class="video-title">Vidéo 8</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4kqJ8s8YeL0" allowfullscreen></iframe></div><span class="video-title">Vidéo 9</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yppLDwpaOSw" allowfullscreen></iframe></div><span class="video-title">Vidéo 10</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/XJcA048Av88" allowfullscreen></iframe></div><span class="video-title">Vidéo 11</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5QZjoask23o" allowfullscreen></iframe></div><span class="video-title">Vidéo 12</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yMaaCOIH-g8" allowfullscreen></iframe></div><span class="video-title">Vidéo 13</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/3aqE6b2yW9M" allowfullscreen></iframe></div><span class="video-title">Vidéo 14</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rjsY1gVXXXk" allowfullscreen></iframe></div><span class="video-title">Vidéo 15</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CBEz06XR8-g" allowfullscreen></iframe></div><span class="video-title">Vidéo 16</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lx9CVpBjy00" allowfullscreen></iframe></div><span class="video-title">Vidéo 17</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/KN1mEMCsak8" allowfullscreen></iframe></div><span class="video-title">Vidéo 18</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/InvMUh7qvL0" allowfullscreen></iframe></div><span class="video-title">Vidéo 19</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nde-Px_5l2I" allowfullscreen></iframe></div><span class="video-title">Vidéo 20</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/uSCMvfp5t0g" allowfullscreen></iframe></div><span class="video-title">Vidéo 21</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YjQQIM3iOMU" allowfullscreen></iframe></div><span class="video-title">Vidéo 22</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/K8RpjJUZp28" allowfullscreen></iframe></div><span class="video-title">Vidéo 23</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lc8_4sj3G3Q" allowfullscreen></iframe></div><span class="video-title">Vidéo 24</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/G3Z6YT0Pk-8" allowfullscreen></iframe></div><span class="video-title">Vidéo 25</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/E1nCKytrmPg" allowfullscreen></iframe></div><span class="video-title">Vidéo 26</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4IjqUsqWCD8" allowfullscreen></iframe></div><span class="video-title">Vidéo 27</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/F2xVu0BbAbw" allowfullscreen></iframe></div><span class="video-title">Vidéo 28</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YJO1-E5MzFI" allowfullscreen></iframe></div><span class="video-title">Vidéo 29</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5Fw139QkOhI" allowfullscreen></iframe></div><span class="video-title">Vidéo 30</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/dn9MZhqJP9s" allowfullscreen></iframe></div><span class="video-title">Vidéo 31</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/29Y8sXOvLh4" allowfullscreen></iframe></div><span class="video-title">Vidéo 32</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/jV3aYnyUuz4" allowfullscreen></iframe></div><span class="video-title">Vidéo 33</span></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/ns-NalBlOh8" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/RWfd2LK9ttc" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/MHiEtI2Wf0Q" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nqgTQD26Llc" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rDGPsbjlaQA" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/Zf5Fn86OT94" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/HlHMNK60K60" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CsbG2xY_f0I" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4kqJ8s8YeL0" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yppLDwpaOSw" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/XJcA048Av88" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5QZjoask23o" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yMaaCOIH-g8" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/3aqE6b2yW9M" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rjsY1gVXXXk" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CBEz06XR8-g" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lx9CVpBjy00" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/KN1mEMCsak8" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/InvMUh7qvL0" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nde-Px_5l2I" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/uSCMvfp5t0g" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YjQQIM3iOMU" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/K8RpjJUZp28" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lc8_4sj3G3Q" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/G3Z6YT0Pk-8" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/E1nCKytrmPg" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4IjqUsqWCD8" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/F2xVu0BbAbw" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YJO1-E5MzFI" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5Fw139QkOhI" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/dn9MZhqJP9s" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/29Y8sXOvLh4" allowfullscreen></iframe></div></div>
+            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/jV3aYnyUuz4" allowfullscreen></iframe></div></div>
         </div>
     </section>
 
-    <section id="organisation">
-        <div class="container">
-            <h2 class="titre-section">Organisation</h2>
-            <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em; color: #333;">Groupes d'Activités</h3>
-            <div class="grid-3">
-                <div class="card"><h3>Groupe 1</h3>
-                    <ul class="liste-noms">
-                        <li>Mialy</li><li>Iratra</li><li>Andrianina</li><li>Shanon</li><li>Fanomezana</li><li>Nomena</li><li>Andry</li><li>Njiva</li><li>Eric</li><li>Kenny</li>
-                    </ul>
-                </div>
-                <div class="card"><h3>Groupe 2</h3>
-                    <ul class="liste-noms">
-                        <li>Miora</li><li>Sariaka</li><li>Daniella</li><li>Fahasoavana</li><li>Judi</li><li>Hasina</li><li>Mika</li><li>Sitraka</li><li>Arthur</li><li>Tsiory</li>
-                    </ul>
-                </div>
-                <div class="card"><h3>Groupe 3</h3>
-                    <ul class="liste-noms">
-                        <li>Lanto</li><li>Seraya</li><li>Ando</li><li>Aina</li><li>Notiavina</li><li>Safidy</li><li>Fanilo</li><li>Mahefa</li><li>Dafe</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin: 60px 0 30px; font-size: 1.8em; color: #333;">Répartition des Chambres</h3>
-            <div class="grid-chambres">
-                <div class="chambre"><span class="chambre-num">Chambre 1</span><ul class="liste-noms"><li>Mialy</li><li>Miora</li><li>Lanto</li><li>Shanon</li><li>Aina</li><li>Daniella</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 2</span><ul class="liste-noms"><li>Andrianina</li><li>Iratra</li><li>Ando</li><li>Fanomezana</li><li>Sariaka</li><li>Seraya</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 3</span><ul class="liste-noms"><li>Pste Léa</li><li>Pst Rabarijaona</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 4</span><ul class="liste-noms"><li>Notiavina</li><li>Safidy</li><li>Judi</li><li>Sitraka</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 5</span><ul class="liste-noms"><li>Hasina</li><li>Mahefa</li><li>Andry</li><li>Njiva</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 6</span><ul class="liste-noms"><li>Dafe</li><li>Arthur</li><li>Tsiory</li><li>Fanilo</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 7</span><ul class="liste-noms"><li>Nomena</li><li>Mika</li><li>Kenny</li><li>Eric</li></ul></div>
-            </div>
-        </div>
+    <section id="organisation" class="container">
+        <h2 class="titre-section">Organisation</h2>
+        <div class="coming-soon">Détails à venir...</div>
     </section>
 
     <section id="infos" class="container">
@@ -639,7 +441,6 @@
         <div class="info-box">
             <h3 style="color:#8b0000; font-size: 2em; margin-bottom: 5px;">MFR Fyé</h3>
             <p style="font-size: 1.2em; color: #555; margin-bottom: 5px;">📍 6 Rue de Rosay, 72610 Fyé</p>
-            <p style="color: #888; font-size:0.95em;">Le domaine nous est entièrement réservé pour le week-end.</p>
             <div class="map-container">
                 <iframe src="https://maps.google.com/maps?q=MFR%20Fy%C3%A9,%206%20Rue%20de%20Rosay,%2072610%20Fy%C3%A9&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
@@ -648,17 +449,12 @@
 
     <footer>
         <img src="logo_transparent.png" alt="Logo Fanasina">
-        
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61570726162921" target="_blank" rel="noopener noreferrer" title="Notre page Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/tanora_fanasina/" target="_blank" rel="noopener noreferrer" title="Notre compte Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+            <a href="https://www.facebook.com/profile.php?id=61570726162921" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/tanora_fanasina/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-
-        <p style="margin: 0; font-size: 0.9em; color:#bbb;">© 2026 Camp Fanasina.<br><br><i>"Vous êtes le sel de la terre" - Matthieu 5:13</i></p>
+        <div class="contact-text">Contact : 06 68 54 36 87</div>
+        <p style="margin-top: 20px; font-size: 0.9em; color:#bbb;">© 2026 Camp Fanasina</p>
     </footer>
 
     <script>
@@ -668,17 +464,7 @@
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
         }
-
-        function toggleMenu() {
-            document.getElementById('menu-liens').classList.toggle('mobile-open');
-        }
-
-        document.querySelectorAll('#menu-liens a').forEach(lien => {
-            lien.addEventListener('click', () => {
-                document.getElementById('menu-liens').classList.remove('mobile-open');
-            });
-        });
+        function toggleMenu() { document.getElementById('menu-liens').classList.toggle('mobile-open'); }
     </script>
-
 </body>
 </html>
