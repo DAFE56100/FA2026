@@ -290,9 +290,42 @@
         .resp { color: #888; font-size: 0.9em; margin-top: 4px;}
 
         /* ==========================================
-           5. ORGANISATION
+           5. SECTION PLAYLIST
         ========================================== */
-        #organisation { background-color: #f4efeb; }
+        #playlist { background-color: #f4efeb; }
+        .grid-playlist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .video-card {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .video-title { font-weight: bold; color: #333; margin-top: 10px; display: block; }
+
+        /* ==========================================
+           6. ORGANISATION
+        ========================================== */
+        #organisation { background-color: #faf8f5; }
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -329,7 +362,7 @@
         }
 
         /* ==========================================
-           6. INFOS & FOOTER
+           7. INFOS & FOOTER
         ========================================== */
         .info-box {
             text-align: center;
@@ -428,6 +461,7 @@
             .activity { font-size: 1.05em; }
             .time { font-size: 0.9em; }
 
+            .grid-playlist { grid-template-columns: 1fr; }
             .grid-3 { grid-template-columns: 1fr; }
             .grid-chambres { grid-template-columns: repeat(2, 1fr); }
             .map-container { height: 250px; }
@@ -445,6 +479,7 @@
         <ul id="menu-liens">
             <li><a href="#vision">Vision</a></li>
             <li><a href="#programme">Programme</a></li>
+            <li><a href="#playlist">Playlist</a></li>
             <li><a href="#organisation">Organisation</a></li>
             <li><a href="#infos">Infos</a></li>
         </ul>
@@ -521,6 +556,24 @@
                 <div class="timeline-item"><span class="time">14h30 - 15h30</span><div class="activity">Témoignages & Remerciements</div><div class="resp">👤 -</div></div>
                 <div class="timeline-item"><span class="time">15h30 - 16h00</span><div class="activity">Séance vidéo, photos, Tiktok !</div><div class="resp">👤 Équipe Com</div></div>
                 <div class="timeline-item"><span class="time">16h00</span><div class="activity">Nettoyage général & Fin</div><div class="resp">👤 Tout le monde</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="playlist" class="container">
+        <h2 class="titre-section">Playlist Fanasina</h2>
+        <div class="grid-playlist">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Z8SPwT3nQZ8" allowfullscreen></iframe>
+                </div>
+                <span class="video-title">Kirk Franklin - I Smile</span>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/joUMvH9v4vw" allowfullscreen></iframe>
+                </div>
+                <span class="video-title">MAVERICK CITY MUSIC X KIRK FRANKLIN - My Life Is In Your Hands</span>
             </div>
         </div>
     </section>
