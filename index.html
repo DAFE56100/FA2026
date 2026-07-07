@@ -23,21 +23,6 @@
         section { padding: 90px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Style pour les listes de noms */
-        .liste-noms { 
-            list-style: none; 
-            padding: 0; 
-            margin: 10px 0 0 0; 
-            font-size: 0.9em; 
-            text-align: center; 
-        }
-        .liste-noms li { 
-            padding: 3px 0; 
-            color: #555; 
-            border-bottom: 1px solid #f0f0f0; 
-        }
-        .liste-noms li:last-child { border-bottom: none; }
-
         /* ==========================================
            2. NAVIGATION "PILULE" (NOIR OBSIDIENNE)
         ========================================== */
@@ -289,80 +274,199 @@
         }
         .resp { color: #888; font-size: 0.9em; margin-top: 4px;}
 
-        /* ==========================================
-           5. SECTION PLAYLIST
-        ========================================== */
-        #playlist { background-color: #f4efeb; }
-        .grid-playlist {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .video-card {
-            background: white;
-            padding: 15px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        /* =====================================================================
+           5. ORGANISATION STYLÉE (GROUPES & CHAMBRES EN 2 LIGNES)
+        ===================================================================== */
+        #organisation { background-color: #faf8f5; }
+        
+        /* Titres des sous-sections */
+        .sub-title {
             text-align: center;
+            font-size: 1.9em;
+            color: #1a1a1a;
+            margin: 40px 0 25px;
+            font-weight: 700;
         }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+        .sub-title span { color: #8b0000; }
+
+        /* --- STYLE DES GROUPES --- */
+        .groupes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .card-groupe {
+            background: #ffffff;
+            border-radius: 20px;
             overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            display: flex;
+            flex-direction: column;
         }
-        .video-container iframe {
+        .card-groupe:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139,0,0,0.12);
+            border-color: #d4af37;
+        }
+        .card-groupe-header {
+            background: linear-gradient(135deg, #181818, #2a2a2a);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+        .card-groupe-title {
+            font-size: 1.4em;
+            color: #d4af37;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .card-groupe-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: #fff;
+            font-size: 0.8em;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-top: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .card-groupe-body {
+            padding: 25px 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            background: #fff;
+        }
+        .nom-pill {
+            background: #fdfbf7;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.92em;
+            font-weight: 600;
+            border: 1px solid #eae2d3;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nom-pill i { color: #8b0000; font-size: 0.8em; }
+        .nom-pill:hover {
+            background: #8b0000;
+            color: white;
+            border-color: #8b0000;
+            transform: scale(1.06);
+            box-shadow: 0 4px 10px rgba(139,0,0,0.2);
+        }
+        .nom-pill:hover i { color: #d4af37; }
+
+        /* --- STYLE DES CHAMBRES EN 2 LIGNES --- */
+        .chambres-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .chambres-row {
+            display: grid;
+            gap: 25px;
+        }
+        /* Ligne 1 : 4 chambres */
+        .chambres-row-1 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        /* Ligne 2 : 3 chambres (centrées) */
+        .chambres-row-2 {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 850px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .card-chambre {
+            background: white;
+            border-radius: 18px;
+            padding: 20px 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-chambre::before {
+            content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
+            width: 100%; height: 5px;
+            background: linear-gradient(90deg, #8b0000, #d4af37);
         }
-        .video-title { font-weight: bold; color: #333; margin-top: 10px; display: block; font-size: 0.9em; }
-
-        /* ==========================================
-           6. ORGANISATION
-        ========================================== */
-        #organisation { background-color: #faf8f5; }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+        .card-chambre:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(139,0,0,0.1);
+            border-color: rgba(212, 175, 55, 0.5);
         }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        .chambre-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #e6dfd1;
         }
-        .card h3 { color: #8b0000; margin-bottom: 15px; font-size: 1.5em; }
-        
-        .grid-chambres {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 15px;
+        .chambre-icon {
+            background: #fff8eb;
+            color: #d4af37;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        .chambre {
-            background: white;
-            padding: 18px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .chambre-num {
+        .chambre-title {
+            font-size: 1.2em;
             font-weight: 800;
             color: #8b0000;
-            margin-bottom: 5px;
-            display: block;
+            margin: 0;
         }
+        .chambre-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .chambre-list li {
+            background: #fcfbf9;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #444;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #f0ece1;
+            transition: background 0.2s;
+        }
+        .chambre-list li:hover { background: #fff; border-color: #d4af37; }
+        .chambre-list li i { color: #d4af37; font-size: 0.85em; }
 
         /* ==========================================
-           7. INFOS & FOOTER
+           6. INFOS & FOOTER
         ========================================== */
         .info-box {
             text-align: center;
@@ -374,7 +478,6 @@
             margin: 0 auto;
         }
         
-        /* Nouveau style pour les affaires à apporter */
         .pack-list-box {
             background: #fdfbf7;
             border: 1px solid rgba(212, 175, 55, 0.4);
@@ -462,11 +565,17 @@
         }
 
         /* =====================================================================
-           🚀 ADAPTATION MOBILE
+           🚀 ADAPTATION MOBILE & TABLETTE
         ===================================================================== */
+        @media (max-width: 992px) {
+            .groupes-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 50px; }
+            .chambres-row-1, .chambres-row-2 { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+        }
+
         @media (max-width: 768px) {
             section { padding: 60px 15px; }
             .titre-section { font-size: 2.2em; margin-bottom: 35px; }
+            .sub-title { font-size: 1.5em; }
 
             nav { top: 10px; width: 95%; padding: 10px 20px; }
             nav .nav-logo img { height: 42px; }
@@ -507,9 +616,7 @@
             .activity { font-size: 1.05em; }
             .time { font-size: 0.9em; }
 
-            .grid-playlist { grid-template-columns: 1fr; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .grid-chambres { grid-template-columns: repeat(2, 1fr); }
+            .chambres-row-1, .chambres-row-2 { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
             .pack-list-box { padding: 20px 15px; }
             .map-container { height: 250px; }
             
@@ -526,7 +633,6 @@
         <ul id="menu-liens">
             <li><a href="#vision">Vision</a></li>
             <li><a href="#programme">Programme</a></li>
-            <li><a href="#playlist">Playlist</a></li>
             <li><a href="#organisation">Organisation</a></li>
             <li><a href="#infos">Infos</a></li>
         </ul>
@@ -607,78 +713,182 @@
         </div>
     </section>
 
-    <section id="playlist" class="container">
-        <h2 class="titre-section">Playlist Fanasina</h2>
-        <div class="grid-playlist">
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/ns-NalBlOh8" allowfullscreen></iframe></div><span class="video-title">Vidéo 1</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/RWfd2LK9ttc" allowfullscreen></iframe></div><span class="video-title">Vidéo 2</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/MHiEtI2Wf0Q" allowfullscreen></iframe></div><span class="video-title">Vidéo 3</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nqgTQD26Llc" allowfullscreen></iframe></div><span class="video-title">Vidéo 4</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rDGPsbjlaQA" allowfullscreen></iframe></div><span class="video-title">Vidéo 5</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/Zf5Fn86OT94" allowfullscreen></iframe></div><span class="video-title">Vidéo 6</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/HlHMNK60K60" allowfullscreen></iframe></div><span class="video-title">Vidéo 7</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CsbG2xY_f0I" allowfullscreen></iframe></div><span class="video-title">Vidéo 8</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4kqJ8s8YeL0" allowfullscreen></iframe></div><span class="video-title">Vidéo 9</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yppLDwpaOSw" allowfullscreen></iframe></div><span class="video-title">Vidéo 10</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/XJcA048Av88" allowfullscreen></iframe></div><span class="video-title">Vidéo 11</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5QZjoask23o" allowfullscreen></iframe></div><span class="video-title">Vidéo 12</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/yMaaCOIH-g8" allowfullscreen></iframe></div><span class="video-title">Vidéo 13</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/3aqE6b2yW9M" allowfullscreen></iframe></div><span class="video-title">Vidéo 14</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/rjsY1gVXXXk" allowfullscreen></iframe></div><span class="video-title">Vidéo 15</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/CBEz06XR8-g" allowfullscreen></iframe></div><span class="video-title">Vidéo 16</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lx9CVpBjy00" allowfullscreen></iframe></div><span class="video-title">Vidéo 17</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/KN1mEMCsak8" allowfullscreen></iframe></div><span class="video-title">Vidéo 18</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/InvMUh7qvL0" allowfullscreen></iframe></div><span class="video-title">Vidéo 19</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/nde-Px_5l2I" allowfullscreen></iframe></div><span class="video-title">Vidéo 20</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/uSCMvfp5t0g" allowfullscreen></iframe></div><span class="video-title">Vidéo 21</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YjQQIM3iOMU" allowfullscreen></iframe></div><span class="video-title">Vidéo 22</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/K8RpjJUZp28" allowfullscreen></iframe></div><span class="video-title">Vidéo 23</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/lc8_4sj3G3Q" allowfullscreen></iframe></div><span class="video-title">Vidéo 24</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/G3Z6YT0Pk-8" allowfullscreen></iframe></div><span class="video-title">Vidéo 25</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/E1nCKytrmPg" allowfullscreen></iframe></div><span class="video-title">Vidéo 26</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/4IjqUsqWCD8" allowfullscreen></iframe></div><span class="video-title">Vidéo 27</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/F2xVu0BbAbw" allowfullscreen></iframe></div><span class="video-title">Vidéo 28</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/YJO1-E5MzFI" allowfullscreen></iframe></div><span class="video-title">Vidéo 29</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/5Fw139QkOhI" allowfullscreen></iframe></div><span class="video-title">Vidéo 30</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/dn9MZhqJP9s" allowfullscreen></iframe></div><span class="video-title">Vidéo 31</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/29Y8sXOvLh4" allowfullscreen></iframe></div><span class="video-title">Vidéo 32</span></div>
-            <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/jV3aYnyUuz4" allowfullscreen></iframe></div><span class="video-title">Vidéo 33</span></div>
-        </div>
-    </section>
-
     <section id="organisation">
         <div class="container">
             <h2 class="titre-section">Organisation</h2>
             
-            <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em; color: #333;">Groupes d'Activités</h3>
-            <div class="grid-3">
-                <div class="card"><h3>Groupe 1</h3>
-                    <ul class="liste-noms">
-                        <li>Mialy</li><li>Iratra</li><li>Andrianina</li><li>Shanon</li><li>Fanomezana</li><li>Nomena</li><li>Andry</li><li>Njiva</li><li>Eric</li><li>Kenny</li><li>Liantsoa</li>
-                    </ul>
+            <h3 class="sub-title">Groupes <span>d'Activités</span></h3>
+            <div class="groupes-grid">
+                
+                <div class="card-groupe">
+                    <div class="card-groupe-header">
+                        <h4 class="card-groupe-title">Groupe 01</h4>
+                        <span class="card-groupe-badge">11 membres</span>
+                    </div>
+                    <div class="card-groupe-body">
+                        <span class="nom-pill"><i class="fas fa-user"></i> Mialy</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Iratra</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Andrianina</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Shanon</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Fanomezana</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Nomena</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Andry</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Njiva</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Eric</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Kenny</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Liantsoa</span>
+                    </div>
                 </div>
-                <div class="card"><h3>Groupe 2</h3>
-                    <ul class="liste-noms">
-                        <li>Miora</li><li>Sariaka</li><li>Daniella</li><li>Fahasoavana</li><li>Mija</li><li>Hasina</li><li>Mika</li><li>Arthur</li><li>Tsiory</li><li>Brice</li><li>Mirajo</li>
-                    </ul>
+
+                <div class="card-groupe">
+                    <div class="card-groupe-header">
+                        <h4 class="card-groupe-title">Groupe 02</h4>
+                        <span class="card-groupe-badge">11 membres</span>
+                    </div>
+                    <div class="card-groupe-body">
+                        <span class="nom-pill"><i class="fas fa-user"></i> Miora</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Sariaka</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Daniella</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Fahasoavana</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Mija</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Hasina</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Mika</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Arthur</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Tsiory</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Brice</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Mirajo</span>
+                    </div>
                 </div>
-                <div class="card"><h3>Groupe 3</h3>
-                    <ul class="liste-noms">
-                        <li>Lanto</li><li>Seraya</li><li>Ando</li><li>Aina</li><li>Notiavina</li><li>Safidy</li><li>Fanilo</li><li>Mahefa</li><li>Dafe</li><li>Judi</li><li>Rova</li>
-                    </ul>
+
+                <div class="card-groupe">
+                    <div class="card-groupe-header">
+                        <h4 class="card-groupe-title">Groupe 03</h4>
+                        <span class="card-groupe-badge">11 membres</span>
+                    </div>
+                    <div class="card-groupe-body">
+                        <span class="nom-pill"><i class="fas fa-user"></i> Lanto</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Seraya</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Ando</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Aina</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Notiavina</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Safidy</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Fanilo</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Mahefa</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Dafe</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Judi</span>
+                        <span class="nom-pill"><i class="fas fa-user"></i> Rova</span>
+                    </div>
                 </div>
+
             </div>
 
-            <h3 style="text-align: center; margin: 60px 0 30px; font-size: 1.8em; color: #333;">Répartition des Chambres</h3>
-            <div class="grid-chambres">
-                <div class="chambre"><span class="chambre-num">Chambre 1</span><ul class="liste-noms"><li>Hasina</li><li>Mahefa</li><li>Andry</li><li>Njiva</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 2</span><ul class="liste-noms"><li>Notiavina</li><li>Safidy</li><li>Judi</li><li>Brice</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 3</span><ul class="liste-noms"><li>Nomena</li><li>Mika</li><li>Eric</li><li>Mirajo</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 4</span><ul class="liste-noms"><li>Aina</li><li>Lanto</li><li>Liantsoa</li><li>Daniella</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 5</span><ul class="liste-noms"><li>Léa</li><li>Rabarijaona</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 6/7</span><ul class="liste-noms"><li>Shanon</li><li>Sariaka</li><li>Seraya</li><li>Iratra</li><li>Rova</li><li>Fanomezana</li><li>Ando</li></ul></div>
-                <div class="chambre"><span class="chambre-num">Chambre 8/9</span><ul class="liste-noms"><li>Mialy</li><li>Andrianina</li><li>Miora</li><li>Mija</li><li>Fahasoavana</li></ul></div>
+            <h3 class="sub-title" style="margin-top: 70px;">Répartition des <span>Chambres</span></h3>
+            
+            <div class="chambres-container">
+                
+                <div class="chambres-row chambres-row-1">
+                    
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-bed"></i></div>
+                            <h4 class="chambre-title">Chambre 1</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Hasina</li>
+                            <li><i class="fas fa-check"></i> Mahefa</li>
+                            <li><i class="fas fa-check"></i> Andry</li>
+                            <li><i class="fas fa-check"></i> Njiva</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-bed"></i></div>
+                            <h4 class="chambre-title">Chambre 2</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Notiavina</li>
+                            <li><i class="fas fa-check"></i> Safidy</li>
+                            <li><i class="fas fa-check"></i> Judi</li>
+                            <li><i class="fas fa-check"></i> Brice</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-bed"></i></div>
+                            <h4 class="chambre-title">Chambre 3</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Nomena</li>
+                            <li><i class="fas fa-check"></i> Mika</li>
+                            <li><i class="fas fa-check"></i> Eric</li>
+                            <li><i class="fas fa-check"></i> Mirajo</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-bed"></i></div>
+                            <h4 class="chambre-title">Chambre 4</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Aina</li>
+                            <li><i class="fas fa-check"></i> Lanto</li>
+                            <li><i class="fas fa-check"></i> Liantsoa</li>
+                            <li><i class="fas fa-check"></i> Daniella</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="chambres-row chambres-row-2">
+                    
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-bed"></i></div>
+                            <h4 class="chambre-title">Chambre 5</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Léa</li>
+                            <li><i class="fas fa-check"></i> Rabarijaona</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-door-open"></i></div>
+                            <h4 class="chambre-title">Chambre 6/7</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Shanon</li>
+                            <li><i class="fas fa-check"></i> Sariaka</li>
+                            <li><i class="fas fa-check"></i> Seraya</li>
+                            <li><i class="fas fa-check"></i> Iratra</li>
+                            <li><i class="fas fa-check"></i> Rova</li>
+                            <li><i class="fas fa-check"></i> Fanomezana</li>
+                            <li><i class="fas fa-check"></i> Ando</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-chambre">
+                        <div class="chambre-header">
+                            <div class="chambre-icon"><i class="fas fa-door-open"></i></div>
+                            <h4 class="chambre-title">Chambre 8/9</h4>
+                        </div>
+                        <ul class="chambre-list">
+                            <li><i class="fas fa-check"></i> Mialy</li>
+                            <li><i class="fas fa-check"></i> Andrianina</li>
+                            <li><i class="fas fa-check"></i> Miora</li>
+                            <li><i class="fas fa-check"></i> Mija</li>
+                            <li><i class="fas fa-check"></i> Fahasoavana</li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
     </section>
 
